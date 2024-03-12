@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let color = ["red", "green", "blue"];
+      color.unshift("yellow"); // 배열의 맨앞에 추가
+      console.log(color);
+      color.push("navy"); // 배열의 맨뒤 추가
+      console.log(color); //['yellow','red','green','blue','navy']
+      color.pop(); //배열맨뒤 요소 제거
+      console.log(color); //['yellow','red','green','blue']
+      color.shift(); //배열맨앞에 요소 제거
+      console.log(color); //['red','green','blue']
+      color.splice(1, 0, "sky", "black");
+      //splice(시작인덱스,삭제할 갯수,추가될 값))
+      console.log(color);
+      let famName = ["철수", "영희", "순희", "길동", "영자", "동수"];
+      famName.splice(2, 1); // 2번인덱스 부터 1개 자르고 나머지 값 반환
+      console.log(famName); //['철수','영희','길동','영자','동수']
+      let newFamName = famName.slice(2, 4); //['길동','영자']
+      console.log(famName);
+      console.log(newFamName);
+
+      let arr1 = [1, 2, 3];
+      let arr2 = [4, 5, 6, 7, 8, 9, 10]; //concat() 배열끼리 합치기
+      let arrPlus = arr1.concat(arr2);
+      console.log(arrPlus);
+
+      let arrReverse = arrPlus.reverse();
+      console.log(arrReverse);
+
+      let mutiArray = [
+        ["a", "b", "c"],
+        ["가", "나", "다", ["하늘", "바다"]],
+      ];
+
+      let mutiflat = mutiArray.flat(2);
+      console.log(mutiflat);
+
+      let textJoin = mutiflat.join("@"); //배열 전체의 값을 문자열로 합친다.
+      console.log(textJoin);
+
+      //  includes('값')  배열안에 값이 있는지 체크 true false
+      // indexOf('값') 배열안 값이 있으면 인덱스 번호 리턴  없으면 -1 리턴
+
+      let year = ["2022", "2023", "2024", "2024"];
+
+      console.log(year.includes("2026")); //false
+      console.log(year.includes("2022")); //true
+      console.log(year.indexOf("2026")); // -1
+      console.log(year.indexOf("2022")); // 0
+
+      let value = year.indexOf("2024");
+      if (value !== -1) {
+        console.log("값이 있다");
+      } else {
+        console.log("값이 없다");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

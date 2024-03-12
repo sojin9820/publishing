@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        //btn1
+        $("#btn1").on("click", function () {
+          $("div").hide();
+        });
+        //btn2
+        $("#btn2").on("click", function () {
+          $("div").show();
+        });
+        //btn3
+        $("#btn3").on("click", function () {
+          $("div").fadeToggle(1500);
+        });
+      }); //jQ
+    </script>
+  </head>
+  <body>
+    <button id="btn1">hide</button>
+    <button id="btn2">show</button>
+    <button id="btn3">toggle</button>
+    <div style="width: 500px; height: 500px; background: red"></div>
+  </body>
+</html>
+<!-- 
+효과메서드 
+show() => display:block
+hide() => display:none
+toggle() => show 와 hide가 토글
+
+fadeIn(1000)=> 대상의 opacity 값을 올리다가 display:block
+1000=>1초 
+fadeOut()=> 대상의 opacity 값을 낮추다가 display:none
+fadeToggle()=> fadeIn()<=>fadeOut()
+
+이벤트 
+$('대상선택자').click(function(){})
+
+$('대상선택자').on('click',function(){})
+$('대상선택자').on({
+'이벤트명':function(){},
+'이벤트명':function(){},
+'이벤트명':function(){}
+})
+-->

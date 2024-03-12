@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #box {
+        width: 500px;
+        height: 200px;
+        background: red;
+        border: 20px solid blue;
+        margin: 60px;
+        padding: 15px;
+      }
+
+      p {
+        width: 800px;
+        height: 100px;
+        border: 1px solid green;
+        font-size: 20px;
+        line-height: 100px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="box">박스1입니다.</div>
+      <p id="text1"></p>
+      <p id="text2"></p>
+      <p id="text3"></p>
+    </div>
+
+    <script>
+      let w = $("#box").width();
+      let innerW = $("#box").innerWidth();
+      let outerW = $("#box").outerWidth();
+      let outerWm = $("#box").outerWidth(true);
+
+      $("#text1").text(
+        `width:${w} 
+				innerWidth:${innerW} 
+				outerWidth:${outerW} 
+				outerwidth(true):${outerWm}`
+      );
+
+      let pos1 = $("#box").position().left;
+      $("#text2").text(pos1);
+      let pos2 = $("#box").offset().left;
+      $("#text3").text(pos2);
+    </script>
+  </body>
+</html>
+
+<!-- 
+	width() : 컨텐츠 넓이
+	height() : 컨텐츠 높이
+	innerWidth() : 패딩까지 포함 넓이
+	innerHeight() : 패딩까지 포함 높이
+	outerWidth() : 보더까지 포함 넓이
+	outerHeight() : 보더까지 포함 높이
+	outerHeight(true) : 마진까지 포함
+
+	offset() 절대값의 위치 (마진포함한 위치 반환)
+	position() 상대값 위치 => (대상요소의 기준부터 위치반환(마진제외))
+	offset().left
+	position().left 
+ -->

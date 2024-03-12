@@ -1,0 +1,36 @@
+.chats .friends-section-row{
+  border-top:1px solid #e0e0e0 ;
+  
+}
+.chats .friends-section-row>a {
+ /*  width: 100%;; */
+  display: flex;
+  justify-content: space-between;
+}
+.chats .friends-section-row:last-child{
+  border-bottom: 1px solid #e0e0e0;
+}
+.chats .friends-info{
+  display: flex;
+  flex-direction: column;
+}
+.chats .friends-section-name{
+  font-weight: 600;
+}
+.chats .friends-section-text{
+  font-size: 12px;
+  color:#999;
+  margin-top:4px
+}
+
+.chats .chats-time{
+  font-size: 10px;
+  color:#999;
+}
+
+.chats .friends-section-row-box .friends-section-row{
+  align-items: flex-start;
+}
+.chats .friends-section-column{
+  align-items: flex-start;
+}

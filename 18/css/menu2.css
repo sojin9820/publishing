@@ -1,0 +1,101 @@
+@import url(reset.css);
+
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  background: url(../img/moon/star.png);
+  font-size: 16px;
+  color: #333;
+}
+
+.content * {
+  pointer-events: none;
+}
+.star {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  transform: translateX(-50%);
+}
+.star#sun {
+  background-color: #ff0;
+  box-shadow: 0 0 40px #ff0;
+}
+.star#moon {
+  background-color: #000;
+  left: 70%;
+  opacity: 0;
+}
+.star.on#moon {
+  left: 55%;
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+#acco {
+  width: 960px;
+  margin: 300px auto 0;
+  /*  position: absolute;top:300px;left:50%;transform: translateX(-50%); */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+}
+#acco li {
+  border-top: 2px solid transparent;
+  border-bottom: 1px solid #ddd;
+}
+#acco li:last-child {
+  border-bottom-color: transparent;
+}
+#acco li h2 {
+  height: 40px;
+  line-height: 40px;
+  text-indent: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: url(../img/moon/plus-minus.png) no-repeat top right;
+}
+
+#acco li p.acco-body {
+  font-size: 14px;
+  max-height: 0;
+  overflow: hidden;
+}
+#acco li p.acco-body.active {
+  max-height: 500px;
+  transition: max-height 1s linear;
+}
+
+p.acco-body span {
+  display: block;
+  padding: 20px;
+}
+
+/* li에 on 이 적용 되었을 때 */
+#acco li.on {
+  background-color: #e8f1fb;
+  border-color: #4a72ae;
+}
+#acco li.on h2 {
+  background-position: bottom right;
+}
+
+/* Night테마*/
+body.night {
+  background-color: #000;
+}
+body.night #acco li h2 {
+  color: #999;
+}
+body.night #acco li.on {
+  background-color: #154177;
+  color: #ddd;
+  border-color: #6392d0;
+}
+body.night #acco li.on h2 {
+  color: #7aa0d0;
+}

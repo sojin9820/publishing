@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+      const hello = function () {
+        console.log("hello");
+      };
+
+      const goodbye = () => {
+        console.log("goodbye");
+      };
+
+      (function () {
+        console.log("즉시실행");
+      })();
+
+      (function num() {
+        console.log(100);
+      })();
+
+      (() => {
+        console.log(100);
+      })();
+
+      hello();
+      goodbye();
+    </script>
+  </head>
+  <body></body>
+</html>

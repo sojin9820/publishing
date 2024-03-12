@@ -1,0 +1,124 @@
+body{
+    height: 100vh;
+	overflow: hidden;
+}
+
+body, ul, h2, p {
+	margin: 0;
+	padding: 0;
+} 
+ul,li{
+    list-style: none;
+}
+
+h2,p,span{pointer-events: none;}
+
+body{
+    background-image: url(../img/moon/star.png);
+    font-size: 16px;
+    color:#333;
+}
+::selection{
+    background-color: transparent;
+}
+
+.star{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top:45px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.star#sun{
+    background-color: yellow;
+    box-shadow: 0 0 40px yellow;
+}
+.star#moon{
+    background-color: black;
+    left: 70%;
+    opacity: 0;
+}
+
+.star.on#moon{
+    left:55%;
+    opacity:1;
+    transition: all 0.2s;
+}
+
+#acco{
+    width: 960px;
+    margin: 300px auto 0;
+    border:1px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#acco li{
+    border-top:2px solid transparent;
+    border-bottom: 1px solid #ddd;
+}
+#acco li:last-child{
+    border-bottom: transparent;
+}
+
+#acco li h2{
+    height: 40px;
+	line-height: 40px;
+    text-indent: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: url(../img/moon/plus-minus.png);
+    background-repeat: no-repeat; 
+	background-position: top right; 
+
+}
+#acco li p.acco-body {
+    font-size: 0.8em;
+    max-height: 0;
+    overflow: hidden;
+}
+#acco li p.acco-body.open{
+    max-height: 500px;
+    transition: max-height 1s linear;  
+}
+
+p.acco-body span{
+    display: block;
+	padding: 20px;
+}
+
+/* li active 가 적용되었을때  */
+
+#acco li.active {
+    background-color: #e8f1fb;
+    border-color: #4a72ae;
+}
+#acco li.active h2{
+    background-position: bottom right;
+}
+
+
+/* Night테마*/
+body.night{
+    background-color: black;
+}
+
+body.night #acco li h2{
+    color: #999;
+}
+
+body.night #acco li.active {
+    background-color: #0b223e;
+    color: #ddd;
+	border-color: #597dab;
+}
+
+body.night #acco li.active h2{
+    color: #597dab;
+}
+
+
+

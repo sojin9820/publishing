@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        width: 300px;
+        height: 200px;
+        margin: 80px auto;
+        background-color: saddlebrown;
+        transition: all 0.5s;
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box.on {
+        background-color: blue;
+        color: yellow;
+        font-size: 50px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <script>
+      const box = document.querySelectorAll(".box");
+      const observerFnc = (entries) => {
+        console.log(entries);
+        entries.forEach((ele) => {
+          if (ele.isIntersecting) {
+            ele.target.classList.add("on");
+          } else {
+            ele.target.classList.remove("on");
+          }
+        });
+      };
+
+      //entries 배열을 인자로 전달해준다. [관찰대상의 정보들이 담겨있다.]
+      const observerItem = new IntersectionObserver(observerFnc);
+      //인터섹션 객체에 의해서 콜백함수가 호출
+
+      box.forEach((ele) => {
+        observerItem.observe(ele);
+        //관찰자.관찰메서드(관찰대상) => 관찰객체에 observe 메서드를 사용해서 대상요소를 감지관찰 할 수 있다.
+      });
+
+      // intersectionRatio : 0 ~ 1 대상요소가 몇% 화면에 보이는지 비율
+      // isIntersecting : true / false => 화면에 노출 되었는지 아닌지
+      // target 대상요소
+
+      //옵션
+      //threshold 0 ~ 1 화면에 노출되는 비율을 0.5 50% 보여질 때 콜백함수 호출
+      //root : 대상 뷰포트 지정
+      //rootMargin : '100px' 대상요소의 마진 값을 설정해서 마진값부터 진입으로 인식하게 할 수 있다.
+    </script>
+  </body>
+</html>

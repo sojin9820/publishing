@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
+@import url(reset.css);
+@import url(globals.css);
+@import url(header.css);
+@import url(navigation.css);
+@import url(friends.css);
+@import url(search-bar.css);
+@import url(chats.css);
+@import url(chat.css);
+@import url(find.css);
+@import url(profile.css);
+@import url(more.css);
+@import url(bigScreen.css);

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      body {
+        background: url(img/animals/bg.png);
+      }
+      #wrapper {
+        width: 800px;
+        margin: 100px auto;
+        background: #151515;
+        padding: 20px;
+        display: flex;
+      }
+      .cover {
+        background: #f5db87;
+        width: 400px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .animal {
+        width: 400px;
+        height: 600px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .animal li {
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .animal li img {
+        width: 100px;
+        height: 100px;
+        pointer-events: none;
+        transition: all 0.15s;
+      }
+      .animal li:hover img {
+        width: 150px;
+        height: 150px;
+      }
+      .a01 {
+        background-color: #fed75f;
+      }
+      .a02 {
+        background-color: #fffbd9;
+      }
+      .a03 {
+        background-color: #94dec5;
+      }
+      .a04 {
+        background-color: #a3d8b2;
+      }
+      .a05 {
+        background-color: #ffeed8;
+      }
+      .a06 {
+        background-color: #77ada2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="cover">
+        <img src="img/animals/a.png" alt="" id="bigImg" />
+      </div>
+      <ul class="animal">
+        <li class="a01"><img src="img/animals/a01.png" alt="" /></li>
+        <li class="a02"><img src="img/animals/a02.png" alt="" /></li>
+        <li class="a03"><img src="img/animals/a03.png" alt="" /></li>
+        <li class="a04"><img src="img/animals/a04.png" alt="" /></li>
+        <li class="a05"><img src="img/animals/a05.png" alt="" /></li>
+        <li class="a06"><img src="img/animals/a06.png" alt="" /></li>
+      </ul>
+    </div>
+
+    <script>
+      const animalsUl = document.querySelector(".animal");
+      const animalsLi = document.querySelectorAll(".animal>li");
+      const cover = document.querySelector(".cover");
+      const bigImg = document.querySelector("#bigImg");
+
+      animalsUl.addEventListener("click", (e) => {
+        let selected = e.target; //현재 클릭된 li가 저장된다.
+        tab(selected);
+      });
+
+      const tab = (selectedAnimal) => {
+        let bg = window.getComputedStyle(selectedAnimal).backgroundColor;
+        let srcValue = selectedAnimal.firstChild.getAttribute("src");
+        console.log(bg);
+        cover.style.backgroundColor = bg;
+        bigImg.setAttribute("src", srcValue);
+      };
+    </script>
+  </body>
+</html>
+<!-- 
+    대상.getAttribute('해당속성명') 해당속성의 현재 값을 반환
+    대상. setAttribute('해당속성명','새값') 해당속성의 값을 새값으로 지정
+    대상의 자식요소들을 선택할 때 firstChild, lastChild, childNodes[0]
+    window.get.ComputedStyle(대상요소).css속성 : 대상의 css 속성을 가지고 올 때
+ -->

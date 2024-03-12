@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,intial-scale=1,minimun-scale=1,maximum-scale=2,user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <button>클릭</button>
+    <h3>스크롤위치값</h3>
+    <div
+      style="
+        border: 1px solid green;
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+      "
+    >
+      Lorem ipsum Do dolor proident enim occaecat dolor esse non in sit dolore
+      labore ad dolor deserunt qui ullamco dolor nisi anim non aliquip proident
+      ut sed ad pariatur sit labore minim pariatur est ut incididunt nisi id
+      veniam ut officia minim ex nulla culpa quis elit in id Duis adipisicing
+      magna quis consectetur velit sunt aute ea pariatur reprehenderit dolor
+      officia id deserunt id quis do culpa non minim consequat ad fugiat magna
+      tempor eiusmod Duis anim elit deserunt deserunt id Duis qui tempor ad do
+      aliqua nisi elit in dolor culpa nulla adipisicing dolore tempor sunt
+      eiusmod voluptate eiusmod in dolore irure incididunt incididunt velit Duis
+      sed non exercitation proident nostrud tempor Ut veniam enim aliquip ut eu
+      dolore in mollit dolor ex laboris do amet laborum aute fugiat sed in
+      officia aute ut est nulla Ut elit aliqua esse officia Ut eiusmod nisi
+      officia pariatur elit aliquip labore. Lorem ipsum Do dolor proident enim
+      occaecat dolor esse non in sit dolore labore ad dolor deserunt qui ullamco
+      dolor nisi anim non aliquip proident ut sed ad pariatur sit labore minim
+      pariatur est ut incididunt nisi id veniam ut officia minim ex nulla culpa
+      quis elit in id Duis adipisicing magna quis consectetur velit sunt aute ea
+      pariatur reprehenderit dolor officia id deserunt id quis do culpa non
+      minim consequat ad fugiat magna tempor eiusmod Duis anim elit deserunt
+      deserunt id Duis qui tempor ad do aliqua nisi elit in dolor culpa nulla
+      adipisicing dolore tempor sunt eiusmod voluptate eiusmod in dolore irure
+      incididunt incididunt velit Duis sed non exercitation proident nostrud
+      tempor Ut veniam enim aliquip ut eu dolore in mollit dolor ex laboris do
+      amet laborum aute fugiat sed in officia aute ut est nulla Ut elit aliqua
+      esse officia Ut eiusmod nisi officia pariatur elit aliquip labore.
+    </div>
+    <script>
+      $("div").scrollTop(250); // 스크롤 값 지정
+      $("button").on("click", function () {
+        let value = $("div").scrollTop(); // 현재스크롤 값을 리턴받는다
+        $("h3").text(value);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+ scrollTop()  대상의 scroll 값을 리턴 
+ scrollTop(250)  대상의 scroll 값을 지정 
+ -->

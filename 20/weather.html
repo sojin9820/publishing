@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="temp-box">
+      <h1 id="country">나라</h1>
+      <h2 id="area">지역</h2>
+      <ul>
+        <li>
+          현재 온도 :
+          <span id="currentTemp">온도</span>
+          <span id="currentDescription">현재 날씨</span>
+        </li>
+        <li>
+          최고 온도 :
+          <span id="maxTemp">최고</span> &deg;C
+        </li>
+        <li>
+          최저 온도 :
+          <span id="minTemp">최저</span> &deg;C
+        </li>
+      </ul>
+      <div class="buttons">
+        <button data-cityname="Seoul" class="citybtn">서울</button>
+        <button data-cityname="Paris" class="citybtn">파리</button>
+        <button data-cityname="London" class="citybtn">런던</button>
+      </div>
+    </div>
+    <script src="js/weather.js"></script>
+  </body>
+</html>

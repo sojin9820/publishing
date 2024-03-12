@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button>클릭 체인지</button>
+    <img src="modal1/images01.jpg" alt="이미지1" title="모달이미지" />
+    <h3>h3의 구문</h3>
+    <script>
+      let srcBox = $("img").attr("src");
+      let altBox = $("img").attr("alt");
+      let titleBox = $("img").attr("title");
+      console.log(srcBox + ":" + altBox + ":" + titleBox);
+
+      $("button").on("click", function () {
+        $("img").attr({
+          src: "modal1/images02.jpg",
+          alt: "이미지2",
+          title: "모달 이미지2",
+        });
+        let textValue = $("img").attr("alt");
+        $("h3").text(textValue);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+  attr('속성') => getAttribute
+  attr('속성','새값') => setAttribute
+  attr('속성','새값'). attr('속성','새값'). attr('속성','새값')
+  attr({'속성':'새 값'})
+  attr({'속성':'새 값','속성':'새 값'})
+  text('새 값') => 대상 요소의 문자를 새 값으로 바꾼다.
+ -->

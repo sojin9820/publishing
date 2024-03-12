@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+
+      #imgwrap {
+        width: 600px;
+        margin: 100px auto;
+      }
+      .imgbox {
+        display: flex;
+      }
+      .imgbox img {
+        width: 200px;
+      }
+      #modal_bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        z-index: 5000;
+      }
+      #modal_center {
+        width: 580px;
+        height: 380px;
+        border: 5px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+      }
+      #modal_center img {
+        width: 100%;
+      }
+      #closeBtn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imgwrap">
+      <ul class="imgbox">
+        <li><img src="img/modal1/images01.jpg" class="imgsrc" /></li>
+        <li><img src="img/modal1/images02.jpg" class="imgsrc" /></li>
+        <li><img src="img/modal1/images03.jpg" class="imgsrc" /></li>
+      </ul>
+    </div>
+    <!--모달창 시작 -->
+    <div id="modal_bg">
+      <div id="modal_center">
+        <button id="closeBtn">닫기</button>
+        <img src="img/modal1/images01.jpg" id="cngImg" />
+      </div>
+    </div>
+    <!--모달창 끝 -->
+  </body>
+
+  <script>
+    const imgbox = document.querySelector(".imgbox"); // ul;
+    const imgList = document.querySelectorAll(".imgsrc"); //img 3장 배열로
+    const modal = document.querySelector("#modal_bg");
+    const cngImg = document.querySelector("#cngImg");
+    const closeBtn = document.querySelector("#closeBtn");
+    const body = document.querySelector("body");
+
+    imgbox.addEventListener("click", (e) => {
+      const select = e.target; //클릭한 이미지
+      let src = select.getAttribute("src");
+      cngImg.setAttribute("src", src);
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", (e) => {
+      modal.style.display = "none";
+    });
+
+    body.addEventListener("click", (e) => {
+      const selected = e.target;
+      let state = window.getComputedStyle(selected).display;
+      if (state === "block" && !selected.closest("#modal_center")) {
+        modal.style.display = "none";
+      }
+    });
+
+    //Element.closest('부모요소')
+    //Element.parentNode 바로 위 부모 선택
+  </script>
+</html>

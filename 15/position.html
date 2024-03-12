@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      #outer {
+        width: 400px;
+        height: 400px;
+        background: #f00;
+        margin: 100px auto;
+        position: relative;
+      }
+      #inner {
+        width: 200px;
+        height: 200px;
+        background: #000;
+        position: absolute;
+        top: 150px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 1500px; background-color: yellow"></div>
+    <div id="outer">
+      <div id="inner"></div>
+    </div>
+    <script>
+      const inner = document.querySelector("#inner");
+      const outer = document.querySelector("#outer");
+      const posTop = parseInt(inner.getBoundingClientRect().top);
+      const posLeft = parseInt(inner.getBoundingClientRect().left);
+      const offsetTop = inner.offsetTop;
+      const offsetLeft = inner.offsetLeft;
+      const scrollValue1 = parseInt(window.pageYOffset); //정수
+      let scrollValue2 = window.scrollY; // 소수점 2자리 까지
+      scrollValue2 = scrollValue2.toFixed(2);
+      console.log(posTop);
+      console.log(posLeft);
+      console.log(offsetTop);
+      console.log(offsetLeft);
+      console.log("스크롤값1:" + scrollValue1);
+      console.log("스크롤값2:" + scrollValue2);
+
+      console.log(scrollValue1 + posTop);
+    </script>
+  </body>
+</html>
+<!--  
+    대상요소.getBoundingClientRect().top  뷰포트 위에서 부터 대상요소의 상단 까지의 값 
+    대상요소.getBoundingClientRect().bottom  뷰포트 위에서 부터 대상요소의 하단 까지의 값 
+    대상요소.getBoundingClientRect().left   뷰포트 왼쪽 부터 대상요소의 왼쪽 까지의 값 
+    대상요소.getBoundingClientRect().right   뷰포트 왼쪽 부터 대상요소의 오른쪽 까지의 값 
+    대상요소.offsetTop    css 포지션 정책대로 받아온다. 
+    대상요소.offsetLeft   
+    window.scrollY  페이지의 세로 스크롤 값을 받아온다.  (익스안됨)
+    window.pageYOffset (익스됨)
+    scrollTo(x좌표 , y좌표 ) 특정위치로 스크롤 시키는 함수
+ -->
+
+<!-- 
+세로 스크롤 값을 받아오는  속성 
+window.scrollY 
+window.pageYOffset
+document.documentElement.scrollTop;
+ -->

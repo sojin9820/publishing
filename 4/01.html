@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 400px;
+        height: 400px;
+        border: 5px solid red;
+        margin: 10px;
+        background-color: #ddd;
+      }
+      .container > div {
+        width: 100px;
+        height: 100px;
+      }
+      .box1 {
+        background-color: #800080;
+      }
+      .box2 {
+        background-color: #ffff00;
+      }
+      .box3 {
+        background-color: #008000;
+      }
+      .box4 {
+        background-color: #ffa500;
+      }
+      .box5 {
+        background-color: #ffc0cb;
+      }
+      .container1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+      }
+      .container2 {
+        display: flex;
+        /* flex-direction: row;
+        flex-wrap: wrap; */
+        align-content: space-evenly;
+        flex-flow: column wrap;
+      }
+      .container3 {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+        align-items: stretch;
+      }
+      .container3 > div {
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1 container">
+      <div class="box1 box">박스1</div>
+      <div class="box2 box">박스2</div>
+      <div class="box3 box">박스3</div>
+    </div>
+    <div class="container2 container">
+      <div class="box1 box">박스1</div>
+      <div class="box2 box">박스2</div>
+      <div class="box3 box">박스3</div>
+      <div class="box4 box">박스4</div>
+      <div class="box5 box">박스5</div>
+    </div>
+    <div class="container3 container">
+      <div class="box1 box">박스1</div>
+      <div class="box2 box">박스2</div>
+      <div class="box3 box">박스3</div>
+      <div class="box4 box">박스4</div>
+      <div class="box5 box">박스5</div>
+    </div>
+  </body>
+</html>

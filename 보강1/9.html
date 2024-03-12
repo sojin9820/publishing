@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //constructor, prototype 자바스크립트의 상속 기능
+      //class => ES6 constructor 생성자
+
+      class People {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+          this.hi = function () {
+            console.log("이름은" + this.name + "나이는" + this.age);
+          };
+        }
+        hi() {
+          console.log("이름은" + this.name + "나이는" + this.age);
+        }
+
+        say() {
+          console.log("방문을 환영합니다." + this.name + "님");
+        } //People.prototype.say = function(){}
+      }
+
+      const people1 = new People("김길동", 10);
+      const people2 = new People("이순희", 20);
+
+      console.log(people1.__proto__); //Object.getPrototypeOf(인스턴스 이름)
+      console.log(Object.getPrototypeOf(people2));
+      console.log(people1.say());
+      console.log(people2.hi());
+
+      //User 클래스
+      //name 새싹
+      //hello() 반갑습니다. (prototype에 추가)
+      //welcome()  방문해주셔서 감사합니다.
+
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+        hello() {
+          console.log("반갑습니다.");
+        }
+        welcome() {
+          console.log("방문해주셔서 감사합니다.");
+        }
+      }
+      const user1 = new User("새싹");
+
+      console.log(user1.hello());
+      console.log(user1.welcome());
+
+      console.log(User.prototype);
+      console.log(Object.getPrototypeOf(user1));
+    </script>
+  </body>
+</html>

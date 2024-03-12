@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Student(a, b) {
+        this.name = a;
+        this.age = b;
+      }
+
+      Student.prototype.gender = "남";
+      const student1 = new Student("lee", 20);
+      console.log(student1.gender);
+      //1. 내가 가지고 있는지 확인
+      //2. 내가 가지고 있지 않다면 부모의 원형인 prototype 검사
+      //3. 내가 가지고 있지 않다면 부모 부모 원형인 prototype 검사
+
+      console.log(student1);
+      // 생성자 constructor로 상속시키면 instance(자식)가 그 값을 직접 소유
+      // prototype 값이 있으면 참조해서 쓰게 한다.
+      // prototype constructor 함수에만 생긴다. constructor.prototype
+      // 인스턴스는 prototype은 없다. __proto__ 속성 => 부모의 prototype과 같은 의미
+      console.log(student1.__proto__);
+      console.log(Student.prototype);
+    </script>
+  </body>
+</html>

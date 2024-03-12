@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      .tab_area {
+        width: 80%;
+        margin: 50px auto;
+      }
+      .tab_title {
+        height: 40px;
+      }
+      .tab_list_box {
+        display: flex;
+      }
+      .tab_list {
+        width: 20%;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+      }
+      .tab_list.tab_active {
+        background-color: #eee;
+      }
+      .tab_content_container {
+        position: relative;
+      }
+      .tab_content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 50px;
+        box-sizing: border-box;
+        background-color: #eee;
+        display: none;
+      }
+      .tab_content.on {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab_area">
+      <div class="tab_title">
+        <ul class="tab_list_box">
+          <li class="tab_list tab_active" data-num="0">타이틀1</li>
+          <li class="tab_list" data-num="1">타이틀2</li>
+          <li class="tab_list" data-num="2">타이틀3</li>
+        </ul>
+      </div>
+      <!-- //tab_title -->
+      <div class="tab_content_container">
+        <div class="tab_content on">
+          1번 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere
+          esse reiciendis iste vero quam labore tenetur quia quos a aperiam at
+          quisquam unde, reprehenderit maiores sapiente perspiciatis ducimus est
+          amet dolores tempora nisi vitae vel. Ducimus hic consequuntur, ab
+          deserunt architecto omnis, quis possimus obcaecati quod
+          exercitationem, tenetur voluptatibus eos?
+        </div>
+        <div class="tab_content">
+          2번 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
+          dolores libero, excepturi omnis, atque accusamus obcaecati harum minus
+          nihil ea ipsum corrupti, maxime laboriosam velit explicabo nulla at
+          laborum. Ipsum quibusdam, hic inventore, asperiores sit reiciendis
+          debitis dignissimos vitae commodi quo nihil! Illum dolorum provident
+          voluptatibus deserunt animi laudantium tenetur!
+        </div>
+        <div class="tab_content">
+          3번 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+          unde. Modi deleniti obcaecati recusandae. Amet aperiam ut
+          voluptatibus, vel voluptatem natus magni earum exercitationem
+          voluptatum eaque harum voluptate! Consequuntur culpa quis non vel a
+          debitis, ad recusandae doloremque veniam, sequi quo velit molestias
+          cumque libero laudantium! Atque ab asperiores nisi.
+        </div>
+      </div>
+      <!-- //tab_content_container -->
+    </div>
+    <script>
+      const titleBox = document.querySelector(".tab_list_box"); // 타이틀 ul
+      const title = document.querySelectorAll(".tab_list"); // 타이틀 ul>li
+      const contents = document.querySelectorAll(".tab_content"); //탭의 내용 div tab_content
+
+      //이벤트 연결
+      titleBox.addEventListener("click", (e) => {
+        let selectedList = e.target;
+        let dataNum = selectedList.dataset.num;
+        titleUpdate(selectedList);
+        contentsUpdate(dataNum);
+      });
+
+      //제목 업데이트
+      function titleUpdate(updateList) {
+        title.forEach((li) => {
+          li.classList.remove("tab_active");
+        });
+        updateList.classList.add("tab_active");
+      }
+
+      //내용 업데이트
+      function contentsUpdate(num) {
+        contents.forEach((item) => {
+          item.classList.remove("on");
+        });
+        contents[num].classList.add("on");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+.history {
+}
+.history input[type="radio"] {
+  display: none;
+}
+.history {
+  display: flex;
+}
+.btn-box {
+  display: flex;
+  flex-direction: column;
+}
+.btn-box label {
+}
+.page-box {
+  width: 1000px;
+  border: 1px solid red;
+}
+.page {
+  display: none;
+}
+
+input[id="2023"]:checked ~ .page-box .page-2023,
+input[id="2022"]:checked ~ .page-box .page-2022,
+input[id="2021"]:checked ~ .page-box .page-2021,
+input[id="2020"]:checked ~ .page-box .page-2020,
+input[id="2019"]:checked ~ .page-box .page-2019 {
+  display: block;
+}
+
+input[id="2023"]:checked ~ .btn-box label[for="2023"],
+input[id="2022"]:checked ~ .btn-box label[for="2022"],
+input[id="2021"]:checked ~ .btn-box label[for="2021"],
+input[id="2020"]:checked ~ .btn-box label[for="2020"],
+input[id="2019"]:checked ~ .btn-box label[for="2019"] {
+  color: violet;
+}

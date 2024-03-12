@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let nums = [1, 2, 3, 4, 5];
+      const result = nums.filter((ele) => ele > 3);
+      console.log(nums);
+      console.log(result);
+
+      const persons = [
+        {
+          name: "kim",
+          point: 50,
+          age: 20,
+        },
+        {
+          name: "lee",
+          point: 92,
+          age: 22,
+        },
+        {
+          name: "park",
+          point: 76,
+          age: 21,
+        },
+        {
+          name: "han",
+          point: 81,
+          age: 32,
+        },
+      ];
+
+      const pass = persons.filter((item) => {
+        item.age > 30;
+      });
+
+      console.log(pass);
+    </script>
+  </head>
+  <body></body>
+</html>

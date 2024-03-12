@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul style="border: 5px solid red">
+      <li>1</li>
+      <li>2</li>
+    </ul>
+    <script>
+      $("ul").after("<h2>after</h2>");
+      $("ul").before("<h2>before</h2>");
+      $("ul").append("<h1>append</h1>");
+      $("ul").prepend("<h1>prepend</h1>");
+      $("<h3>appendTo</h3>").appendTo("ul");
+    </script>
+  </body>
+</html>
+
+<!-- 
+  after() 앞에 요소로 추가
+  before() 뒤에 요소로 추가
+  append() 마지막 자식으로 요소 추가
+  prepend() 첫번째 자식으로 요소 추가
+  appendTo()
+  prependTo()
+ -->

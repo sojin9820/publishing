@@ -1,0 +1,82 @@
+@import url(reset.css);
+body {
+  background: url(../img/hero/bg.png) no-repeat fixed;
+  background-size: cover;
+}
+/* 메인 */
+#main {
+  width: 960px;
+  margin: 50px auto;
+}
+/*메인 - 스크린*/
+#screen {
+  width: 960px;
+  height: 400px;
+  overflow: hidden;
+}
+#imgslider {
+  width: 4800px;
+  display: flex;
+  position: relative;
+  transition: left 2s;
+}
+/* 메인 - 아이콘 */
+#icons {
+  display: flex;
+}
+#icons a {
+  display: block;
+  width: 150px;
+  height: 150px;
+  text-indent: -9999px;
+  border-radius: 50%;
+  border: 10px solid yellow;
+  margin: 10px;
+  opacity: 0.45;
+}
+#icons a.on {
+  opacity: 1;
+  border-top-left-radius: 10px;
+  border-color: transparent;
+} /* classList.add할 클래스 */
+#icons a.icon01 {
+  background: url(../img/hero/icon01.png);
+}
+#icons a.icon02 {
+  background: url(../img/hero/icon02.png);
+}
+#icons a.icon03 {
+  background: url(../img/hero/icon03.png);
+}
+#icons a.icon04 {
+  background: url(../img/hero/icon04.png);
+}
+#icons a.icon05 {
+  background: url(../img/hero/icon05.png);
+}
+/*컨트롤*/
+#control {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  width: 110px;
+  height: 80px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+#control a {
+  display: block;
+  width: 30px;
+  height: 80px;
+  background: url(../img/hero/arrow.png);
+  text-indent: -9999px;
+  opacity: 0.6;
+}
+#control a:hover {
+  opacity: 1;
+}
+#control a.next {
+  background-position: right 0;
+  top: 0;
+}

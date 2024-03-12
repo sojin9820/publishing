@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    // for (let i = 1; i < 10; i++) {
+    //   console.log(`변수 i의 값은 ${i}`);
+    // }
+
+    //구구단 3단
+    let num = 3;
+    for (let i = 1; i < 10; i++) {
+      console.log(`${num}*${i}=${num * i}`);
+    }
+    /* 
+    //1~10 까지 중에서 2배수만 출력
+    for (let i = 1; i % 2 <= 10; i++) {
+      if (i % 2 == 0) {
+        console.log(i);
+      }
+    } */
+
+    for (let i = 1; i <= 50; i++) {
+      //1~50까지 사이에서 2배수인 동시에 7배수인 값만 출력
+      if (i % 2 == 0 && i % 7 == 0) {
+        console.log(i);
+      }
+    }
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 == 0) {
+        continue;
+      }
+      console.log(i);
+    }
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 == 0) {
+        break;
+      }
+      console.log(i);
+    }
+  </script>
+  <body></body>
+</html>

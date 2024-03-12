@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BOX</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/03.css" />
+  </head>
+  <body>
+    <div class="sliderWrap">
+      <div class="slider">
+        <img src="img/bag01.png" />
+        <img src="img/bag02.png" />
+        <img src="img/bag03.png" />
+      </div>
+      <div class="slider">
+        <img src="img/shoe01.png" />
+        <img src="img/shoe02.png" />
+        <img src="img/shoe03.png" />
+      </div>
+      <div class="slider">
+        <img src="img/acc01.png" />
+        <img src="img/acc02.png" />
+        <img src="img/acc03.png" />
+      </div>
+    </div>
+    <!--//(e)canvas -->
+
+    <div class="box-wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <!--//(e)box-wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".box").each(function (index) {
+        $(this)
+          .delay(500 * index)
+          .fadeIn();
+      });
+
+      $(".box").on("click", function () {
+        $(this).addClass("open");
+        $(this).siblings().removeClass("open");
+        let index = $(this).index();
+        console.log(index);
+        $(".slider")
+          .eq(index)
+          .children("img")
+          .each(function (indexNum) {
+            $(this)
+              .delay(indexNum * 200)
+              .animate({ top: "0px" });
+          });
+        $(".slider")
+          .eq(index)
+          .siblings()
+          .children("img")
+          .each(function (indexNum) {
+            $(this)
+              .delay(indexNum * 100)
+              .animate({ top: "210px" }, 150);
+          });
+
+        /* $('.slider').eq(index).children('img').animate({top:'0px'})
+                $('.slider').eq(index).siblings().children('img').animate({top:'210px'},200) */
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+1 . 박스가 순차적으로 나타난다.
+2 . 박스클릭시  클릭한 박스에는  .open 클래스 addClass 된다  나머지 박스는 .open 클래스 remove 시킨다
+3 . 클릭한 박스의 인덱스 번호를 받아서 같은 index 번호를 가진 slider 를 애니메이트로 열러준다. 
+    인덱스번호가 일치하지 않는 slider 는 닫는다. 
+
+index()  대상의 인덱스 리턴해준다. 
+대상.each(function(){})  대상요소를 순회하면서 각요소에 한번씩 함수를 적용시킨다. (바닐라 js foreach 문)
+ -->

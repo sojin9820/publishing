@@ -1,0 +1,43 @@
+@import url(reset.css);
+
+body{background: #555}
+
+#wrapper{width: 900px;height: 600px;margin:100px auto}
+
+.gallery{width: 50%;height: 100%;float: left}
+
+.gallery li{margin: 6px;cursor: pointer;overflow: hidden;border:5px solid #000;box-sizing: border-box;opacity: .5;}
+
+.gallery li:hover{opacity: 1}
+
+/*왼쪽ul*/
+.side-a li{float: right}
+
+/*오른쪽ul*/
+.side-b li{float: left}
+
+
+.type-a{width: 70px;height: 70px;border-radius: 50%}
+.type-b{width: 210px;height: 70px}
+.type-b img{position: relative;top:-30px}
+.type-c{width: 340px;height: 120px;background: #fff;line-height: 120px;font-size: 60px;font-family: 'arial';color:#ddd;text-align: center}
+.type-c .inner{position:relative}
+
+/*
+제이쿼리에서 애니메이트 적용할 값
+.type-a : border-radius border-width
+.type-b img : top  -30px - > 0 
+.type-c .inner : top  0 -> -150px
+*/
+
+
+
+
+
+
+
+
+
+
+
+

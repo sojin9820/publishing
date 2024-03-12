@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //배열의 메서드를 Array 객체의 메서드 index0()
+      const arrNum1 = [0, 2, 3, 5, 8, 7, 9];
+      const arrNum2 = [9, 5, 7, 6, 8, 12, 6];
+
+      Array.prototype.index0 = function () {
+        console.log("첫번째 값입니다." + this[0]);
+      };
+
+      arrNum1.index0();
+      arrNum2.index0();
+      console.log(arrNum1.__proto__);
+      //console.log(arrNum1.prototype)
+    </script>
+  </body>
+</html>

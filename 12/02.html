@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+        background-color: red;
+      }
+      ul.on {
+        background-color: green;
+      }
+      li {
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        line-height: 150px;
+        border: 2px solid #367;
+        margin: 10px;
+      }
+      li.on {
+        background-color: rgb(21, 172, 183);
+      }
+      button {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="logo">타이틀</h1>
+    <button id="on">on</button>
+    <button id="off">off</button>
+    <ul>
+      <!--  li[class="list"]*5{$}  -->
+      <li class="list">1</li>
+      <li class="list">2</li>
+      <li class="list">3</li>
+      <li class="list">4</li>
+      <li class="list">5</li>
+    </ul>
+    <script>
+      //classList.add()
+      //classList.remove()
+      //classList.toggle()
+      const ul = document.querySelector("ul");
+      const list = document.querySelectorAll(".list");
+      const on = document.querySelector("#on");
+      const off = document.querySelector("#off");
+      on.addEventListener("click", () => {
+        ul.classList.add("on");
+      });
+      off.addEventListener("click", () => {
+        ul.classList.remove("on");
+      });
+      list.forEach((li) => {
+        li.addEventListener("click", () => {
+          li.classList.toggle("on");
+        });
+      });
+    </script>
+  </body>
+</html>

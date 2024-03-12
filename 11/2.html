@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function hello() {
+        console.log("hello world");
+      }
+
+      hello();
+      hello();
+      hello();
+
+      function person(address, gender) {
+        console.log(`주소는 ${address}`);
+        console.log(`성별은 ${gender}`);
+      }
+      person("서울", "여자");
+      person("경기도", "남자");
+      person("강원도", "남자");
+
+      function num(a, b) {
+        return a + b;
+      }
+
+      let result = num(10, 30);
+      console.log(result);
+
+      function userInfo(name, age) {
+        return `이름은 ${name} 나이는 ${age}`;
+      }
+      let profile = userInfo("홍길동", 20);
+      console.log(profile);
+
+      //두 개의 매개변수를 받아서 두 값을 곱해서 출력하는 함수
+      function num(a, b) {
+        return a * b;
+      }
+
+      let result2 = num(10, 30);
+      console.log(result2);
+    </script>
+  </head>
+  <body></body>
+</html>

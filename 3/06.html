@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .m-left {
+        margin-left: 20px;
+      }
+      .m-right {
+        margin-right: 20px;
+      }
+      .m-top {
+        margin-top: 20px;
+      }
+      .m-bottom {
+        margin-bottom: 20px;
+      }
+      #header,
+      #footer {
+        height: 100px;
+        background-color: rgb(106, 194, 238);
+      }
+      .main-banner {
+        height: 500px;
+        background-color: rgb(109, 187, 114);
+      }
+      .contents-container {
+        background-color: rgb(211, 211, 211);
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .inner {
+        width: 960px;
+        margin: 0 auto;
+        background-color: rgb(53, 159, 150);
+      }
+      .inner > .contents-top,
+      .inner > .contents-bottom {
+        overflow: hidden;
+      }
+      .inner > .contents-top > div {
+        width: 307px;
+        height: 400px;
+        float: left;
+      }
+      .inner > .contents-top > .box1 {
+        background-color: rgb(182, 217, 225);
+      }
+      .inner > .contents-top > .box2 {
+        background-color: rgb(162, 247, 255);
+        width: 306px;
+      }
+      .inner > .contents-top > .box3 {
+        background-color: rgb(179, 251, 215);
+      }
+      .inner > .contents-bottom > div {
+        width: 470px;
+        height: 200px;
+        float: left;
+      }
+      .inner > .contents-bottom > .box4 {
+        background-color: rgb(218, 165, 32);
+      }
+      .inner > .contents-bottom > .box5 {
+        background-color: rgb(138, 43, 226);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header id="header"></header>
+      <main id="main">
+        <div class="main-banner"></div>
+        <div class="contents-container">
+          <div class="inner">
+            <div class="contents-top">
+              <div class="box1"></div>
+              <div class="box2 m-left m-right"></div>
+              <div class="box3"></div>
+            </div>
+            <div class="contents-bottom m-top">
+              <div class="box4 m-right"></div>
+              <div class="box5"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>

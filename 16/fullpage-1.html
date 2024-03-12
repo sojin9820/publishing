@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"
+      integrity="sha512-otONSJGv1l0LjJXcgyqi2MeKXtnthkiXAleeQjFJOKYcVD5u+mOuPb7xCnlsb74Ld+N0ONbP7KYRmW2/OWrvaA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/vendors/easings.min.js"
+      integrity="sha512-SrKslwu6IjHEo/8mAOtkoUOT3MzHCEOFWktrC8BNtjPuBBYLYjg1y/Marat34uYfOfxDMLEwy8DLArWEVc2i+w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"
+      integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      @import url(css/reset.css);
+      .section {
+        background-size: cover;
+        background-position: center top;
+      }
+      .s1 {
+        background-image: url(img/nb/slide01.png);
+      }
+      .s2 {
+        background-image: url(img/nb/slide02.png);
+      }
+      .s3 {
+        background-image: url(img/nb/slide03.png);
+      }
+      .s4 {
+        background-image: url(img/nb/slide04.png);
+      }
+      #menuBar {
+        position: fixed;
+        z-index: 1000;
+        right: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #menuBar .gnb li {
+        height: 50px;
+      }
+      #menuBar .gnb li a {
+        display: block;
+        line-height: 50px;
+        font-size: 40px;
+        opacity: 0.5;
+        color: #ccc;
+        font-family: "Impact", "Arial Narrow Bold", sans-serif;
+      }
+      #menuBar .gnb li.active a {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="menuBar">
+      <ul class="gnb">
+        <li data-menuanchor="section0"><a href="#section0">section1</a></li>
+        <li data-menuanchor="section1"><a href="#section1">section2</a></li>
+        <li data-menuanchor="section2"><a href="#section2">section3</a></li>
+        <li data-menuanchor="section3"><a href="#section3">section4</a></li>
+      </ul>
+    </nav>
+    <div id="fullpage">
+      <div class="section s1">섹션1</div>
+      <div class="section s2">섹션2</div>
+      <div class="section s3">섹션3</div>
+      <div class="section s4">섹션4</div>
+    </div>
+    <script>
+      new fullpage("#fullpage", {
+        licenseKey: "OPEN-SOURCE-GPLv3-LICENSE",
+        anchors: ["section0", "section1", "section2", "section3"],
+        menu: ".gnb",
+      });
+    </script>
+  </body>
+</html>

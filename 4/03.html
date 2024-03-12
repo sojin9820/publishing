@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        display: flex;
+        width: 600px;
+        height: 40px;
+        background-color: #666;
+        margin-top: 50px;
+      }
+      .wrap > div:nth-child(1) {
+        background-color: red;
+      }
+      .wrap > div:nth-child(2) {
+        background-color: green;
+      }
+      .wrap > div:nth-child(3) {
+        background-color: blue;
+      }
+      .wrap1 > div {
+        width: 100px;
+        /* flex-grow: 1; */
+      }
+      .wrap1 > div:nth-child(1) {
+        flex-grow: 2;
+      }
+      .wrap1 > div:nth-child(2) {
+        flex-grow: 1;
+      }
+      .wrap1 > div:nth-child(3) {
+        flex-grow: 1;
+      }
+      .wrap2 > div {
+        width: 300px;
+      }
+      .wrap2 > div:nth-child(1) {
+        flex-shrink: 2;
+      }
+      .wrap2 > div:nth-child(2) {
+        flex-shrink: 1;
+      }
+      .wrap2 > div:nth-child(3) {
+        flex-shrink: 1;
+      }
+      .wrap3 > div {
+        width: 400px;
+      }
+      .wrap3 > div:nth-child(1) {
+        flex-shrink: 3;
+      }
+      .wrap3 > div:nth-child(2) {
+        flex-shrink: 1;
+      }
+      .wrap3 > div:nth-child(3) {
+        flex-shrink: 1;
+      }
+      .wrap4 {
+        width: 800px;
+      }
+      .wrap4 > div {
+        width: 300px;
+      }
+      .wrap4 > div:nth-child(1) {
+        flex-shrink: 2;
+      }
+      .wrap4 > div:nth-child(2) {
+        flex-shrink: 2;
+      }
+      .wrap4 > div:nth-child(3) {
+        flex-shrink: 0;
+      }
+      .wrap5 > div {
+        flex-basis: 0;
+      }
+      .wrap5 > div:nth-child(1) {
+        flex-grow: 2;
+      }
+      .wrap5 > div:nth-child(2) {
+        flex-grow: 2;
+      }
+      .wrap5 > div:nth-child(3) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.wrap$*4>div.box*3 -->
+    <div class="wrap1 wrap">
+      <div class="box"></div>
+      <!-- (600/4)*2-->
+      <div class="box"></div>
+      <!-- (600/4)*1-->
+      <div class="box"></div>
+      <!-- (600/4)*1-->
+    </div>
+    <div class="wrap2 wrap">
+      <div class="box"></div>
+      <!--300-((300/4)*2)=150-->
+      <div class="box"></div>
+      <!--300-((300/4)*1)=225-->
+      <div class="box"></div>
+      <!--300-((300/4)*1)=225-->
+    </div>
+    <div class="wrap3 wrap">
+      <div class="box"></div>
+      <!--400-((600/5)*3)=40-->
+      <div class="box"></div>
+      <!--400-((600/5)*1)=280-->
+      <div class="box"></div>
+      <!--400-((600/5)*1)=280-->
+    </div>
+    <div class="wrap4 wrap">
+      <div class="box"></div>
+      <!--250-->
+      <div class="box"></div>
+      <!--250-->
+      <div class="box"></div>
+      <!--300-->
+    </div>
+    <div class="wrap5 wrap">
+      <div class="box">박스</div>
+      <div class="box">박스 박스</div>
+      <div class="box">박스</div>
+    </div>
+  </body>
+</html>

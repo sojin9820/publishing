@@ -1,0 +1,37 @@
+.find-header {
+  background-color: #523737;
+  color: #fff;
+  padding: 5px 10px 15px;
+  width: 100%;
+}
+
+.nav-bar {
+  background-color: #e0e0e0;
+  color: #523737;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-bar-nav i {
+  margin: 4px;
+  font-size: 18px;
+}
+
+.nav-bar-nav .nav-bar-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+}
+
+.recommend-title .recommend {
+  border-bottom: 1px solid #e0e0e0;
+  color: #999;
+  font-size: 12px;
+  text-align: left;
+}

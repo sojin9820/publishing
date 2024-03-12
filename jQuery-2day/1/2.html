@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,intial-scale=1,minimun-scale=1,maximum-scale=2,user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link href="css/02.css" rel="stylesheet" type="text/css" />
+    <script>
+      $(function () {
+        //dl의 뒤에 동적으로 마크업 추가 새로운 div 생성 되게 한다.
+        $("dl").after('<div id="greyLayer"></div><div id="overLayer"></div>');
+        $("dt").on("click", function () {
+          let ddText = $(this).next("dd").text();
+          $("#greyLayer").show();
+          $("#overLayer").show().text(ddText).css({
+            transform: "translateY(-50%)",
+          });
+        });
+        $("#greyLayer").on("click", function () {
+          $("#greyLayer").hide();
+          $("#overLayer").hide();
+        });
+        //#1 dt를 클릭시
+        //#greyLayer show() #overLayer show() 시켜야 한다.
+        //클릭한 dt 다음에 오는 dd의 text를 가지고 와서 overLayer의 텍스트로 넣어준다.
+        //#2 #greyLayer
+        //열려있는 모달 창이 닫힌다. #greyLayer, #overLayer hide()
+      });
+    </script>
+  </head>
+  <body>
+    <dl>
+      <dt>목록1</dt>
+      <dd>
+        목록1의 내용목록1의 내용목록1의 내용 목록1의 내용목록1의 내용목록1의
+        내용
+      </dd>
+      <dt>목록2</dt>
+      <dd>
+        목록2의 내용목록2의 내용목록2의 내용 목록2의 내용목록2의 내용목록2의
+        목록2의 내용목록2의 내용목록2의 내용 목록2의 내용목록2의 내용목록2의
+        내용
+      </dd>
+      <dt>목록3</dt>
+      <dd>
+        목록3의 내용목록3의 내용목록3의 내용 목록3의 내용목록3의 내용목록3의
+        내용 목록3의 내용목록3의 내용목록3의 내용 목록3의 내용목록3의
+        내용목록3의 내용 목록3의 내용목록3의 내용목록3의 내용 목록3의
+        내용목록3의 내용목록3의 내용 목록3의 내용목록3의 내용목록3의 내용
+        목록3의 내용목록3의 내용목록3의 내용
+      </dd>
+    </dl>
+  </body>
+</html>
+
+<!-- 
+	요소 추가 메서드
+	대상.after(추가될 요소) 대상 뒤에 요소를 추가한다. 대상의 형제요소로 추가
+	대상.before(추가될 요소) 대상 앞에 요소를 추가한다. 대상의 형제요소로 추가
+ -->

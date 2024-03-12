@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .wrap {
+        background-color: #e0e0e0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .wrap > div {
+        width: 250px;
+        height: 250px;
+        border: 5px solid #968;
+        margin: 10px;
+        background-color: #fff;
+        display: flex;
+        cursor: pointer;
+      }
+      .wrap > div > div {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        background-color: violet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box1:hover > div {
+        background-color: yellowgreen;
+        transform: scale(1.5);
+        transition-property: background-color, transform;
+        transition-duration: 1s;
+        transition-delay: 0s, 1s;
+      }
+      .box2 > div {
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+      .box2:hover > div {
+        /* transform: translate(50px, 50px); */
+        left: 50px;
+        top: 50px;
+        transition-property: left, top;
+        transition-duration: 1s, 1.5s;
+        transition-delay: 0s, 1s;
+      }
+      .box3:hover > div {
+        transform: rotate(45deg);
+        transition: transform 1s 1s cubic-bezier(0.08, 0.7, 0.9, 0.21);
+      }
+      .box4:hover > div {
+        transform: skewX(20deg);
+      }
+      .box5:hover > div {
+        transform: scale(150%) rotate(60deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box1"><div>text-box</div></div>
+      <div class="box2"><div>text-box</div></div>
+      <div class="box3"><div>text-box</div></div>
+      <div class="box4"><div>text-box</div></div>
+      <div class="box5"><div>text-box</div></div>
+      <div class="box6"><div>text-box</div></div>
+      <div class="box7"><div>text-box</div></div>
+    </div>
+  </body>
+</html>

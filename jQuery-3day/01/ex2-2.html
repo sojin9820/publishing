@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      $(document).on("mousemove", function (e) {
+        $("#box").text(`마우스X좌표: ${e.pageX} 마우스Y좌표: ${e.pageY}`);
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+  event 객체의 정보 속성
+  pageX 마우스의 X좌표 리턴
+  pageY 마우스의 Y좌표 리턴
+  event객체.pageX
+  event객체.pageY
+
+  {
+    속성 : 값
+  }
+ -->

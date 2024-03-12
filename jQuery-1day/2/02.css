@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+#wrapper {
+  width: 900px;
+  overflow: hidden;
+  margin: 50px auto;
+}
+li {
+  list-style: none;
+}
+li.main {
+  float: left;
+}
+li.main > a {
+  display: block;
+  width: 180px;
+  color: #333;
+  font-weight: bold;
+}
+li.main > a:hover {
+  color: #ff720b;
+}
+ul.submenu {
+  font-size: 13px;
+  margin-top: 15px;
+  display: none;
+}
+ul.submenu > li > a {
+  display: block;
+  width: 180px;
+  height: 25px;
+  color: #666;
+}
+ul.submenu > li > a:hover {
+  color: #cf9;
+}

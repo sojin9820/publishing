@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="js/form.js"></script>
+  </head>
+  <body>
+    <form name="frm1">
+      <p>
+        1.소문자 - 대문자 변경<br />
+        <input type="text" name="n1" id="n1" />
+      </p>
+      <p>
+        2.대문자-소문자 변경 <br />
+        <input type="text" name="n2" id="n2" />
+      </p>
+      <p>
+        3.5글자 초과 입력시 alert<br />
+        <input type="text" name="n3" id="n3" />
+      </p>
+      <p>
+        5.텍스트 창에 입력후 다음 텍스트 창 클릭하면 앞글자 3글자 뒤에 텍스트에
+        복사<br />
+        <input type="text" name="n5" id="n5" />-<input
+          type="text"
+          name="m5"
+          id="m5"
+        />
+      </p>
+      <p>
+        6.text창이나 textarea 모든글자 를 대소문자로 변경<br />
+        <input type="text" name="n6" id="n6" />
+        <textarea name="m6" id="m6" cols="20" rows="3"></textarea>
+        <input type="button" value="대문자" id="nbtn1" />
+        <input type="button" value="소문자" id="nbtn2" />
+      </p>
+      <p>
+        7.이름을 입력하고 확인버튼 누르면 alert 창에 입력 받은 이름 출력 <br />
+        <input type="text" name="n7" id="n7" />
+        <input type="button" value="확인" name="m7" id="m7" />
+      </p>
+      <p>
+        8.메일 입력 후 @ 가 있는지 체크<br />
+        <input type="text" name="n8" id="n8" />
+        <input type="button" value="확인" id="m8" />
+      </p>
+      <p>
+        9.앞자리 6자리가 모두 입력되면 자동으로 다른 입력창으로 포커스 이동
+        <br />
+        <input type="text" name="n9" id="n9" />-<input
+          type="text"
+          name="m9"
+          id="m9"
+        />
+      </p>
+      <p>
+        10.주민번호 13자리인지 체크<br />
+        <input type="text" name="n10" id="n10" />-<input
+          type="text"
+          name="m10"
+          id="m10"
+        />
+        <input type="button" value="확인" id="btn10" />
+      </p>
+      <p>
+        11성별체크<br />
+        <input type="text" name="n11" id="n11" />-
+        <input type="text" name="m11" id="m11" />
+        <input type="button" value="확인" id="btn11" />
+      </p>
+      <p>
+        12비밀번호 일치<br />
+        <input type="password" name="n12" id="n12" /><br />
+        <input type="password" name="m12" id="m12" /><br />
+        <input type="button" value="확인" id="btn12" />
+      </p>
+      <p>
+        13.검색글자수 (한글자 이상 입력하세요) <br />
+        <input type="text" name="n13" id="n13" />
+        <input type="button" value="검색" id="btn13" />
+      </p>
+    </form>
+  </body>
+</html>

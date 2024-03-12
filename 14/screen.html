@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/screen.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="screen">
+        <ul id="imgslider" class="clearfix">
+          <li><img src="img/hero/slide01.png" alt="" /></li>
+          <li><img src="img/hero/slide02.png" alt="" /></li>
+          <li><img src="img/hero/slide03.png" alt="" /></li>
+          <li><img src="img/hero/slide04.png" alt="" /></li>
+          <li><img src="img/hero/slide05.png" alt="" /></li>
+        </ul>
+      </div>
+      <!--//스크린-->
+      <div id="icons" class="clearfix">
+        <a href="#" class="icon01" data-index="0">>Avengers</a>
+        <a href="#" class="icon02" data-index="1">X-Men</a>
+        <a href="#" class="icon03" data-index="2">Transformer</a>
+        <a href="#" class="icon04" data-index="3">Superman</a>
+        <a href="#" class="icon05" data-index="4">Batman</a>
+      </div>
+      <!--//아이콘-->
+    </div>
+    <!--//메인-->
+    <div id="control">
+      <a href="#" class="prev">prev</a>
+      <a href="#" class="next">>next</a>
+    </div>
+    <!--//컨트롤-->
+    <script>
+      const icons = document.querySelector("#icons");
+      const iconA = document.querySelectorAll("#icons>a");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      const slider = document.querySelector("#imgslider");
+      const sliderLi = document.querySelectorAll("#imgslider>li");
+      const sliderLiLength = sliderLi.length - 1;
+      console.log(sliderLiLength);
+      let currentNum = 0;
+      let event = new Event("click");
+
+      iconA.forEach((ele) => {
+        ele.addEventListener("click", () => {
+          let indexNum = ele.dataset.index;
+          let target = indexNum * -960;
+          slider.style.left = `${target}px`;
+          currentNum = indexNum; // 현재번호를 저장하는 currentNum 에 누른아이콘의 index를 저장한다.
+          selectIcon(ele);
+        });
+      });
+
+      // 아이콘에 클래스 적용 (인디케이터업데이트)
+      const selectIcon = (selectedA) => {
+        iconA.forEach((ele) => {
+          ele.classList.remove("on");
+        });
+        selectedA.classList.add("on");
+      };
+      //prev 버튼 클릭
+      prevBtn.addEventListener("click", () => {
+        currentNum--;
+        if (currentNum < 0) currentNum = sliderLiLength;
+        console.log(currentNum);
+        iconA[currentNum].dispatchEvent(event);
+      });
+      //next 버튼 클릭
+      nextBtn.addEventListener("click", () => {
+        currentNum++;
+        if (currentNum > sliderLiLength) currentNum = 0;
+        console.log(currentNum);
+        iconA[currentNum].dispatchEvent(event);
+      });
+    </script>
+  </body>
+</html>

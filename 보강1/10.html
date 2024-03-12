@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //class 상속받은 다른 class를 만들고 싶다. extends
+      class User {
+        constructor(a, b) {
+          this.name = a;
+          this.age = b;
+        }
+      }
+
+      const user1 = new User("순희", 30);
+      const user2 = new User("철수", 35);
+
+      //User라는 클래스를 상속받아서 Friend 라는 클래스를 만들고
+      //Friend gender 속성 추가
+
+      class Friend extends User {
+        constructor(a, b, c) {
+          super(a, b);
+          this.gender = c;
+        }
+      }
+
+      const friend1 = new Friend("경희", 30, "female");
+      console.log(friend1);
+      console.log(user1);
+
+      //Cat 이라는 클래스를 만들어서 아래 같은 인스턴스를 생성
+      //const cat1={type:'페르시안',color='white'}
+      //const cat2 = {type:'러시안 블루', color:'gray'}
+
+      //Cat 상속해서 Dog에는 gender 속성 추가
+      //const dog1 = {type="요르셔",color:"brown",gender='male'}
+
+      class Cat {
+        constructor(type, color) {
+          this.type = type;
+          this.color = color;
+        }
+      }
+
+      const cat1 = new Cat("페르시안", "white");
+      const cat2 = new Cat("러시안 블루", "gray");
+
+      class Dog extends Cat {
+        constructor(type, color, gender) {
+          super(type, color);
+          this.gender = gender;
+        }
+      }
+
+      const dog1 = new Dog("요르셔", "brown", "male");
+
+      console.log(cat1);
+      console.log(cat2);
+      console.log(dog1);
+    </script>
+  </body>
+</html>

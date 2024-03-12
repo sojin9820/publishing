@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="js/aos.css" />
+    <script src="js/aos.js"></script>
+    <style>
+      div {
+        width: 500px;
+        height: 300px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        background-color: brown;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-aos="fade-down">페이드 다운</div>
+    <div data-aos="fade-up">페이드 업</div>
+    <div data-aos="fade-up-right">페이드 업 right</div>
+    <div data-aos="fade-up-left">페이드 업 left</div>
+    <div data-aos="zoom-in">줌인</div>
+    <div data-aos="zoom-out">줌아웃</div>
+    <div data-aos="flip-left">플립</div>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

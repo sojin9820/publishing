@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="box"
+      style="width: 100px; height: 100px; background: red; position: absolute"
+    ></div>
+    <script>
+      $(window).on("keypress", function (event) {
+        if (event.key == "o") {
+          $("#box").animate({ left: "+=20px" });
+        } else if (event.key == "p") {
+          $("#box").animate({ left: "-=20px" });
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+  자바스크립트 대입연산자
+  let num += 10;
+  let num -= 10;
+
+  '+=10px'
+  '-=10px'
+ -->

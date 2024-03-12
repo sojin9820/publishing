@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const plus = (num) => {
+        return num + 2;
+      };
+      const minus = (num) => {
+        return num - 2;
+      };
+      const multiply = (num) => {
+        return num * 2;
+      };
+      const division = (num) => {
+        return num / 2;
+      };
+
+      const cal = (fnc, value) => {
+        return fnc(value);
+      };
+      //콜백함수 : 매개변수로 전달되는 함수
+      //고차함수 : 매개변수로 다른 함수는 전달 받거나 함수를 리턴하는 함수
+      console.log(cal(plus, 10)); //12
+      console.log(cal(minus, 10)); //8
+      console.log(cal(multiply, 10)); //20
+      console.log(cal(division, 10)); //5
+    </script>
+  </head>
+  <body></body>
+</html>

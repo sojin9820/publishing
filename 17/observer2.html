@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box_wrap {
+        width: 600px;
+        height: 600px;
+        margin: 200px auto;
+        background-color: cadetblue;
+        overflow: auto;
+      }
+      .box {
+        width: 300px;
+        height: 200px;
+        margin: 80px auto;
+        background-color: saddlebrown; /* transition: all 0.5s; */
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box.on {
+        background-color: blue;
+        color: yellow;
+        font-size: 50px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box_wrap">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">10</div>
+      <div class="box">11</div>
+      <div class="box">12</div>
+      <div class="box">13</div>
+      <div class="box">14</div>
+      <div class="box">15</div>
+    </div>
+    <script>
+      const boxWrap = document.querySelector(".box_wrap");
+      const box = document.querySelectorAll(".box");
+      const options = {
+        root: boxWrap,
+        rootMargrin: "0px 0px -150px 0",
+        threshold: 0.7,
+      };
+      const observerItem = new IntersectionObserver(observerFnc, options);
+
+      function observerFnc(entries) {
+        entries.forEach((ele) => {
+          if (ele.isIntersecting) {
+            ele.target.classList.add("on");
+          } else {
+            ele.target.classList.remove("on");
+          }
+        });
+      }
+
+      box.forEach((ele) => observerItem.observe(ele));
+    </script>
+  </body>
+</html>

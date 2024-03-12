@@ -1,0 +1,57 @@
+@import url(reset.css);
+body {
+  background-color: #555;
+}
+#wrapper {
+  width: 900px;
+  height: 600px;
+  margin: 100px auto;
+  display: flex;
+}
+.gallery {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery li {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2;
+  margin: 6px;
+  border: 5px solid;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.gallery li:hover {
+  opacity: 1;
+}
+/* 왼쪽 ul */
+.side-a {
+  justify-content: flex-end;
+}
+.type-a {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.type-b {
+  width: 210px;
+  height: 70px;
+}
+.type-b img {
+  position: relative;
+  top: -30px;
+}
+.type-c {
+  width: 340px;
+  height: 120px;
+  background-color: #fff;
+  font-size: 60px;
+  color: #ddd;
+  text-align: center;
+}
+.type-c .inner {
+  position: relative;
+  top: 50px;
+}

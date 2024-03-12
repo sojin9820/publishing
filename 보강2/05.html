@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>클릭 미</button>
+    <div class="box" style="width: 200px; height: 200px"></div>
+    <script>
+      /*   const button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        const ele = document.createElement("div");
+        document.body.appendChild(ele);
+        ele.style.color = "red";
+        ele.innerText = "추가된 DIV 요소";
+      }); */
+
+      const button = document.querySelector("button");
+      const box = document.querySelector(".box");
+      button.addEventListener("click", () => {
+        box.style.backgroundColor = "red";
+        box.style.backgroundColor = "green";
+        box.style.backgroundColor = "blue";
+      });
+    </script>
+  </body>
+</html>

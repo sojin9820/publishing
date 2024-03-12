@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 300px;
+        height: 300px;
+        background-color: #ccc;
+        border: 5px solid #000;
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-flow : row wrap */
+      }
+      .wrap > div {
+        width: 100px;
+        height: 100px;
+      }
+      .wrap > div:nth-child(1) {
+        background-color: red;
+      }
+      .wrap > div:nth-child(2) {
+        background-color: green;
+      }
+      .wrap > div:nth-child(3) {
+        background-color: blue;
+      }
+      .wrap > div:nth-child(4) {
+        background-color: yellow;
+      }
+      .wrap > div:nth-child(5) {
+        background-color: pink;
+      }
+      .wrap1 {
+        align-content: stretch;
+      }
+      .wrap2 {
+        align-content: flex-start;
+      }
+      .wrap3 {
+        align-content: flex-end;
+      }
+      .wrap4 {
+        align-content: center;
+      }
+      .wrap5 {
+        align-content: space-between;
+      }
+      .wrap1 > div:nth-child(1) {
+        order: 2;
+      }
+      .wrap1 > div:nth-child(2) {
+        order: 0;
+      }
+      .wrap1 > div:nth-child(3) {
+        order: 0;
+      }
+      .wrap1 > div:nth-child(4) {
+        order: 1;
+      }
+      .wrap1 > div:nth-child(5) {
+        order: 0;
+      }
+      .wrap2 {
+        flex-wrap: nowrap;
+      }
+      .wrap2 > div:nth-child(1) {
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.wrap.wrap$*5>div{$}*5 -->
+    <div class="wrap wrap1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="wrap wrap2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <div class="wrap wrap3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="wrap wrap4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="wrap wrap5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>

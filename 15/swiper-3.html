@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .gtq-wrapper {
+        background: #ddd;
+        margin-top: 100px;
+      }
+      .slider-center-box {
+        width: 980px;
+        margin: auto;
+        position: relative;
+      }
+      .swiper-slider-box {
+        width: 776px;
+      }
+      .gtq-pagenation {
+        position: absolute;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 204px !important;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .gtq-pagenation .swiper-pagination-bullet {
+        background: url(img/gtq/tab1.png) no-repeat left 0 top -75px;
+        width: 100px;
+        height: 75px;
+        display: block;
+        text-indent: -99999px;
+        margin: 0 !important;
+        opacity: 1;
+      }
+      .gtq-pagenation
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-position: left 0 top 0;
+        border-radius: 0 !important;
+      }
+      .swiper-pagination-bullet:nth-child(2) {
+        background-image: url(img/gtq/tab2.png);
+      }
+      .swiper-pagination-bullet:nth-child(3) {
+        background-image: url(img/gtq/tab3.png);
+      }
+      .swiper-pagination-bullet:nth-child(4) {
+        background-image: url(img/gtq/tab4.png);
+      }
+      .swiper-pagination-bullet:nth-child(5) {
+        background-image: url(img/gtq/tab5.png);
+      }
+      .swiper-pagination-bullet:nth-child(6) {
+        background-image: url(img/gtq/tab6.png);
+      }
+      .swiper-pagination-bullet:nth-child(7) {
+        background-image: url(img/gtq/tab7.png);
+      }
+      .swiper-pagination-bullet:nth-child(8) {
+        background-image: url(img/gtq/tab8.png);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gtq-wrapper">
+      <div class="slider-center-box">
+        <div class="swiper-slider-box">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img1.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img2.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img3.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img4.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img5.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img6.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img7.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gtq/main_img8.png" alt="" />
+              </div>
+            </div>
+            <!-- //swiper-wrapper -->
+          </div>
+          <!-- //swiper -->
+        </div>
+        <!-- //swiperr-slider-box -->
+        <div class="gtq-pagenation"></div>
+      </div>
+      <!-- //slider-center-box -->
+    </div>
+    <!-- //gtq-wrapper -->
+  </body>
+  <script>
+    const gtqSlider = new Swiper(".gtq-wrapper .swiper", {
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 600,
+      pagination: {
+        el: ".gtq-pagenation",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+    });
+  </script>
+</html>

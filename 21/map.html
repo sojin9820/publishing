@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3];
+      const a = arr.forEach((ele) => {
+        return ele * 2;
+      });
+
+      const b = arr.map((ele) => {
+        return ele * 2;
+      });
+
+      console.log("forEach 리턴값" + a); //undefined
+      console.log("map 리턴값" + b); //[2,4,6]
+    </script>
+  </body>
+</html>
+<!-- 
+  map, foreach 배열의 요소를 반복한다
+  foreach 각각 요소에 콜백함수를 실행하고 새로운 배열을 리턴하지 않는다.
+  map 각각의 요소에 콜백함수를 실행하고 반복결과로 새로운 배열이 필요하면 새로운 배열로 리턴한다.
+ -->

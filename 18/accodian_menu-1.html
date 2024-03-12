@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      body {
+        background-color: #ddd;
+        font-family: "arial", sans-serif;
+        color: #999;
+      }
+      #wrapper {
+        width: 280px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .main li {
+        border-top: 1px solid #ddd;
+        background-color: #fff;
+      }
+      .main > li > a {
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        font-size: 20px;
+        color: #666;
+        background: url(img/sprite.png) no-repeat right top;
+      }
+      .main > li.on > a {
+        background-position: right top -60px;
+        color: #048ffb;
+      }
+      .sub > li {
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        padding-left: 40px;
+        color: #999;
+      }
+      .main > li > a {
+        pointer-events: none;
+      }
+      /* max-height 최대 높이 max-width 최대 넓이 */
+      .sub {
+        max-height: 0;
+        transition: max-height 0.5s;
+        overflow: hidden;
+      }
+      .sub.active {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <ul class="main">
+        <li data-num="0">
+          <a href="#">Main1</a>
+          <ul class="sub">
+            <li><a href="#">Sub1</a></li>
+            <li><a href="#">Sub2</a></li>
+            <li><a href="#">Sub3</a></li>
+          </ul>
+        </li>
+        <li data-num="1">
+          <a href="#">Main2</a>
+          <ul class="sub">
+            <li><a href="#">Sub1</a></li>
+            <li><a href="#">Sub2</a></li>
+            <li><a href="#">Sub3</a></li>
+          </ul>
+        </li>
+        <li data-num="2">
+          <a href="#">Main3</a>
+          <ul class="sub">
+            <li><a href="#">Sub1</a></li>
+            <li><a href="#">Sub2</a></li>
+            <li><a href="#">Sub3</a></li>
+          </ul>
+        </li>
+        <li data-num="3">
+          <a href="#">Main4</a>
+          <ul class="sub">
+            <li><a href="#">Sub1</a></li>
+            <li><a href="#">Sub2</a></li>
+            <li><a href="#">Sub3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script src="js/menu1.js"></script>
+  </body>
+</html>

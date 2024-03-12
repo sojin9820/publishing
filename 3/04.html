@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 960px;
+        margin: 0 auto;
+        background-color: #e0e0e0;
+      }
+      #header,
+      #footer {
+        height: 100px;
+        background-color: #909090;
+      }
+      #main {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        overflow: hidden;
+      }
+      #main > div {
+        float: left;
+        width: 470px;
+        height: 220px;
+        background-color: #606060;
+      }
+      #main > .box2 {
+        background-color: #a7d2df;
+      }
+      #main > .box3 {
+        background-color: #346e65;
+      }
+      #main > .box4 {
+        background-color: #8680d9;
+      }
+      .m-left {
+        margin-left: 20px;
+      }
+      .m-right {
+        margin-right: 20px;
+      }
+      .m-top {
+        margin-top: 20px;
+      }
+      .m-bottom {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header id="header"></header>
+      <main id="main">
+        <div class="box1 m-right m-bottom"></div>
+        <div class="box2 m-bottom"></div>
+        <div class="box3 m-right"></div>
+        <div class="box4"></div>
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>

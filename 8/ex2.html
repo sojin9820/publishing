@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-size: 50px;
+        color: blue;
+      }
+      @media screen and (max-width: 1200px) {
+        body {
+          background-color: red;
+        }
+        .txt-box > .txt {
+          font-size: 24px;
+          color: #fff;
+          border: 5px solid #fff;
+          width: 500px;
+        }
+
+        @media screen and (max-width: 980px) {
+          body {
+            background-color: green;
+          }
+          .txt-box > .txt {
+            color: yellow;
+            font-size: 12px;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .txt-box > .txt {
+            color: skyblue;
+            font-size: 20px;
+            border-color: skyblue;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반응형 테스트</h1>
+    <div class="txt-box">
+      <p class="txt">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed molestiae,
+        sint libero consequuntur corrupti dolores voluptas vero ex enim aut
+        provident exercitationem repudiandae, ad dolorum quibusdam. Cupiditate
+        debitis cum quod temporibus, alias minima tenetur commodi atque. Laborum
+        sunt expedita beatae sapiente consequatur quos quia, nostrum suscipit
+        necessitatibus nulla quaerat maiores sed consectetur veritatis ipsa
+        blanditiis in quasi porro libero ipsam.
+      </p>
+    </div>
+  </body>
+</html>

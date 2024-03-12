@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="box1"
+      style="border: 3px solid red; width: 400px; height: 200px; margin: 20px"
+    >
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </div>
+    <div
+      id="box2"
+      style="border: 3px solid blue; width: 400px; height: 200px; margin: 20px"
+    >
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </div>
+    <script>
+      $("#box1").remove();
+      $("#box2").empty();
+    </script>
+  </body>
+</html>
+<!-- 
+  요소를 삭제하는 메서드
+  remove() 대상요소 자제를 삭제
+  empty() 대상요소의 하위요소를 삭제(비운다의 개념)
+ -->

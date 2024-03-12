@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //오브젝트(인스턴스)를 찍는 틀 생성자 함수
+      function People(name, age) {
+        (this.name = name), (this.age = age), (this.address = "seoul");
+      }
+
+      const people1 = new People("순희", 30);
+      const people2 = new People("철수", 10);
+
+      console.log(people1);
+      console.log(people2);
+
+      //제품명 ,제품 가격, 제조일
+      function Product(name, price, date) {
+        (this.name = name),
+          (this.price = price),
+          (this.date = date),
+          (this.cost = function () {
+            console.log(this.price * 0.5);
+          });
+      }
+
+      const item1 = new Product("우유", 5000, "2024/02/03");
+      const item2 = new Product("T-shirt", 10000, "2024/01/20");
+      console.log(item1);
+      console.log(item1.cost());
+
+      console.log(Product.prototype);
+      Product.prototype.size = "small";
+
+      console.log(item1.size);
+      console.log(item2.size);
+
+      let arr1 = [2022, 2023, 2024];
+      let arr2 = new Array(2022, 2023, 2024);
+      console.log(Array.prototype);
+      console.log(arr2.__proto__);
+      arr2.indexOf("2022");
+    </script>
+  </body>
+</html>
+<!-- 
+  객체의 상속 
+
+  constructor 생성자 상속 
+  prototype constructor 상위 원형(생성자의 부모)
+ -->

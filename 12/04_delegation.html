@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      ul {
+        display: flex;
+        background-color: #ddd;
+      }
+      li {
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        line-height: 150px;
+        border: 2px solid #367;
+        margin: 10px;
+      }
+      li.on {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="listAll">
+      <li class="list">1</li>
+      <li class="list">2</li>
+      <li class="list">3</li>
+      <li class="list">4</li>
+      <li class="list">5</li>
+    </ul>
+    <script>
+      const listAll = document.querySelector("#listAll");
+      const list = document.querySelectorAll(".list");
+      //이벤트 위임(delegation)
+      listAll.addEventListener("click", (e) => {
+        let selectedLi = e.target;
+        console.log(selectedLi);
+        listUpdate(selectedLi);
+      });
+
+      function listUpdate(li) {
+        list.forEach((ele) => {
+          ele.classList.remove("on");
+        });
+        li.classList.add("on");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+*{margin:0;padding:0}
+li{list-style:none}
+body{background:#ddd;font-family:arial;color:#999}
+.wrapper{width:280px;margin:0 auto;
+box-shadow:0 0 10px rgba(0,0,0,.5)}
+
+.main li{background:rgb(255,255,255);border-top:1px solid #ddd}
+
+.main li .submenu{display:none}/*서브하위메뉴 닫기*/
+
+.main li .submenu li{height:60px;line-height:60px;text-indent:20px;
+cursor:pointer;}
+
+.main li h2{
+height:60px;line-height:60px;font-size:24px;padding:0 20px;
+background:url('img/sprite.png') no-repeat right top;
+cursor:pointer
+}
+
+/*제이쿼리에서 addClass로 적용할 클래스open*/
+.main li h2.open{color:#048ffb;background-position:right bottom;}

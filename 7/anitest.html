@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        margin: 20px;
+      }
+      .box1 {
+        animation-name: ani1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        position: relative;
+      }
+      .box2 {
+        animation: ani2 5s 2s 4 alternate;
+      }
+      .box3 {
+        background: url(images/wallpaper.jpg) no-repeat center / cover;
+        animation: ani2 6s 2s linear 3 alternate;
+      }
+      .box4:hover {
+        position: relative;
+        animation: ani1 2s;
+      }
+      .box5 {
+        position: relative;
+        animation: ani1 3s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes ani1 {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: 600px;
+        }
+      }
+      @keyframes ani2 {
+        0% {
+          background-image: url(images/wallpaper.jpg);
+        }
+        50% {
+          background-image: url(images/kakaofriends.png);
+        }
+        100% {
+          background-image: url(images/kakaostory.png);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.box.box${박스$}*5 -->
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+    <div class="box box5">박스5</div>
+  </body>
+</html>

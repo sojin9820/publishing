@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict"; //엄격모드
+
+      console.log(this);
+
+      //window 최상위 객체 => 모든 함수, 모든 전역변수, DOM 가지고 있는 최상위 전역객체
+
+      //1,2
+      function fnc() {
+        console.log("일반함수 안에서" + this);
+      }
+      fnc();
+
+      //3
+      const obj = {
+        name: "kim",
+        hi: function () {
+          console.log(this);
+        },
+      };
+
+      const obj2 = {
+        name: "kim",
+        say: {
+          hi: function () {
+            console.log(this);
+          },
+        },
+      };
+
+      obj.hi();
+      obj2.say.hi();
+
+      //4
+      function User() {
+        this.name = name;
+      }
+
+      const user1 = new User("kim");
+      /* 
+      1. 일반 함수 안에서 this는 window 객체
+      2. 'use strict'; 엄격모드 일때 일반함수 안에서 this는 undefined
+      3. object 안에서 this 대상 객체 (메서드를 담고있는 오브젝트)
+      4. 생성자 constructor 안에서 this 이 생성자 함수로 만들어질 인스턴스 오브젝트
+      */
+    </script>
+  </body>
+</html>

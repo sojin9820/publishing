@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //원시 타입을 싸고 있는 객체 wrapper 객체
+      const num = 2022.125; //wrapper 객체가 Number 객체의 메서드와 속성을 상속받아서 사용
+      const str = "05월 25일"; //wrapper 객체가 String 객체의 메서드와 속성을 상속받아서 사용
+      const strObject = new String("자바스크립트"); //문자 객체 생성
+      const numObject = new Number(12345); //숫자 객체 생성
+      console.log(num.toFixed(1));
+
+      console.log(typeof num); //number
+      console.log(typeof numObject); //object
+      console.log(Number.MAX_VALUE);
+      console.log(Number.MIN_VALUE);
+      console.log(Number.NaN);
+
+      //isNaN() 숫자가 아니면 true 숫자이면 false
+
+      console.log(isNaN(num));
+
+      if (isNaN(num)) {
+        console.log(`${num} 숫자가 아닙니다.`);
+      } else {
+        console.log(`${num} 숫자 입니다.`);
+      }
+
+      const num2 = 123456.1256;
+      console.log(num2.toFixed(1));
+      console.log(num2.toPrecision(5));
+      console.log(typeof num.toString());
+
+      console.log(parseInt(-10)); //-10 (숫자 문자)
+      console.log(parseInt(-10.456)); //-10
+      console.log(parseInt("10.454px")); //10
+      console.log(parseInt("px12345")); //NaN
+
+      let num3 = parseInt("10.454px");
+      console.log(typeof num3);
+
+      console.log(parseFloat(-10)); //-10 (숫자 문자)
+      console.log(parseFloat(-10.456)); //-10.456
+      console.log(parseFloat("10.454px")); //10.456
+      console.log(parseFloat("px12345")); //NaN
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+body {
+  font-family: "Noto Sans KR", "Open Sans", sans-serif;
+  padding-top: 68px;
+}
+* {
+  box-sizing: border-box;
+}
+
+main {
+  animation: mainPopIn 0.5s ease-in-out;
+}
+
+@keyframes mainPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

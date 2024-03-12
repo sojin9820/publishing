@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(css/reset.css);
+        html,body{height: 100%;}
+        .section{background-size: cover;background-position: center top;height: 100%;}
+        .s1{background-image: url(img/fullpage/01.png)}
+        .s2{background-image: url(img/fullpage/02.png)}
+        .s3{background-image: url(img/fullpage/03.png)}
+        .s4{background-image: url(img/fullpage/04.png)}
+        .s5{background-image: url(img/fullpage/05.png)}
+        .s6{background-image: url(img/fullpage/06.png)}
+        #menuBar{position: fixed;z-index: 1000;left:100px;top: 50%;transform: translateY(-50%);}
+        #menuBar .gnb li{height: 60px;line-height: 60px;font-size: 40px;opacity: .5;font-family: 'arial';color:#fff;transition:all 0.35s;cursor: pointer;}
+        #menuBar .gnb li.on{opacity: 1;font-weight: bold}
+        #menuBar .gnb li:hover{opacity: 1;font-weight: bold}
+
+    </style>
+</head>
+<body>
+    <div id='menuBar'>
+        <ul class="gnb">
+            <li>section1</li>
+            <li>section2</li>
+            <li>section3</li>
+            <li>section4</li>
+            <li>section5</li>
+            <li>section6</li>
+        </ul>
+    </div>
+    <div class="section s1" data-index='0'></div>
+    <div class="section s2" data-index='1'></div>
+    <div class="section s3" data-index='2'></div>
+    <div class="section s4" data-index='3'></div>
+    <div class="section s5" data-index='4'></div>
+    <div class="section s6" data-index='5'></div>
+
+    <script>
+      
+    </script>
+</body>
+</html>

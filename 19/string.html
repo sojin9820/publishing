@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const text = "Hello World!";
+      console.log(text.length); //12 공백 포함
+      console.log(text.charAt(0)); //H
+      console.log(text.charAt(6)); //W
+      console.log(text.indexOf("Wor")); //6
+      console.log(text.indexOf("l")); //2
+      console.log(text.lastIndexOf("l")); //9
+      console.log(text.includes("Hello")); //단어를 포함하고 있으면 true 포함하고 있지 않으면 false
+      console.log(text.toUpperCase()); // 대문자치환
+      console.log(text.slice(2, 6)); // 2부터 6앞에 문자까지 llo
+      console.log(text.substring(2, 6)); // 2부터 6앞에 문자까지 llo
+      console.log(text.slice(2)); //2부터 끝까지
+      console.log(text.substring(2)); //2부터 끝까지
+      console.log(text.slice(-2)); //-시작 하면 끝부터 d!
+      console.log(text.substring(-2)); //음수혀용이 안됨
+      console.log(text.slice(1, 0)); // ""
+      console.log(text.substring(1, 0)); //(0,1)
+
+      const spacetxt1 = "          aaaa         bbbb           ";
+      console.log(spacetxt1.length); //23
+      console.log(spacetxt1.trim()); //공백제거
+      let spaceTrim = spacetxt1.trim();
+      console.log(spaceTrim.length); //14
+      const spacetxt2 = "aaaa-bbbb-cccc-dddd";
+      const arrSpacetxt2 = spacetxt2.split("-"); //['aaaa','bbbb','cccc','dddd']
+      //aaaabbbbccccdddd 문자로
+      console.log(arrSpacetxt2.join(""));
+
+      const textSample = "가나다라마바사 ABCDEFG 12345 가나다라마바사";
+      console.log(textSample.slice(5, -10)); //바사 ABCDEFG 1234
+      console.log(textSample.substring(5, -10)); //가나다라마
+      console.log(textSample.slice(-2)); //바사
+      console.log(textSample.substring(-2)); //가나다라마바사 ABCDEFG 12345 가나다라마바사
+
+      //slice(s) s번부터 인덱스 끝까지
+      //slice(s,e) s부터 e 직전까지 추출
+      //slice 뒤부터 계산
+      //substring 음수가 허용되지 않는다. 결국 음수가 오면 0 치환
+    </script>
+  </head>
+  <body></body>
+</html>

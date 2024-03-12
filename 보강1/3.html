@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //지역변수, 전역변수
+      let a = 1;
+      let b = 10;
+
+      function fnc1() {
+        console.log(a);
+        let b = 20; //지역변수로 선언된 것 재선언이 아님
+        console.log("지역변수" + b);
+        let c = 30;
+        d = 40; //함수안에서 키워드 없이 선언시 전역변수로 인식함
+      }
+      fnc1();
+      console.log("전역변수" + b);
+      console.log(d);
+      //console.log(c); 지역변수를 전역에서 호출 에러
+
+      if (1) {
+        let say = "안녕";
+        console.log(say);
+      }
+      console.log(say);
+    </script>
+  </head>
+  <body></body>
+</html>

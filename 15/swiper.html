@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+      .mainbanner {
+        width: 960px;
+        height: 400px;
+        margin: 50px auto 0;
+        position: relative; /* pagenation의 기준 */
+      }
+      .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        background-color: #695;
+        opacity: 0.2;
+      }
+      .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+      .swiper-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: -30px;
+      }
+
+      /*next prev */
+      .swiper-button-prev:after,
+      .swiper-rtl .swiper-button-next:after {
+        content: "" !important;
+        display: block;
+        background: url(img/prev.png) no-repeat;
+        width: 55px;
+        height: 105px;
+      }
+      .swiper-button-next:after,
+      .swiper-rtl .swiper-button-prev:after {
+        content: "" !important;
+        display: block;
+        background: url(img/next.png) no-repeat;
+        width: 55px;
+        height: 105px;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 55px;
+        height: 105px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainbanner">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/can/slide01.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/can/slide02.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/can/slide03.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/can/slide04.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/can/slide05.png" alt="" />
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <script>
+      const bannerSlider = new Swiper(".mainbanner .swiper", {
+        autoplay: {
+          delay: 3000,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+</html>

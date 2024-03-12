@@ -1,0 +1,24 @@
+*{margin:0;padding:0}
+li{list-style:none}
+body{text-align:center;}
+#arts{margin:100px auto;display:inline-block}
+#arts li{float:left;width:200px;height:200px;
+margin-right:35px;box-shadow:2px 12px 50px #000;
+border:10px solid #999;position:relative;background:#000}
+#arts li:last-child{margin-right:0}
+#arts li img{width:100%;height:100%;}
+#modal{position:absolute;left:0;top:0;z-index:1000;
+width:100%;height:100%;background:rgba(0,0,0,0.5);
+cursor:pointer;display:none;}
+
+/*제이쿼리에서 생성할 요소의 CSS*/
+.bigImg{position:absolute;z-index:2000;}
+#titleBox{
+position:absolute;z-index:3000;bottom:0;
+width:100%;height:60px;line-height:60px;
+background:rgba(0,0,0,0.8);color:#fff;
+}
+
+
+
+

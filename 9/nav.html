@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(css/reset.css);
+      .nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+      }
+      .nav > li {
+        padding: 0 24px;
+        font-size: 24px;
+        height: 100px;
+        line-height: 100px;
+      }
+      .nav > li > a {
+        display: block;
+        height: 100%;
+        position: relative;
+      }
+      .nav > li > a::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 0px;
+        background-color: #a52a2a;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .nav > li:hover > a::after {
+        width: 50px;
+        transition: all 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ul.nav>li*5>a[href="#"] -->
+    <ul class="nav">
+      <li><a href="#">웨딩회원</a></li>
+      <li><a href="#">신혼회원</a></li>
+      <li><a href="#">이벤트</a></li>
+      <li><a href="#">고객서비스</a></li>
+      <li><a href="#">제휴</a></li>
+    </ul>
+  </body>
+</html>

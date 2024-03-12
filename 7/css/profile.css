@@ -1,0 +1,67 @@
+.profile-body {
+  padding-top: 0;
+}
+
+.top-header-transparent {
+  background-color: transparent;
+}
+
+.profile .profile-header {
+  height: 60vh;
+  background: url(../images/bg_default.png) no-repeat center / cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-header .profile-header-box {
+  position: relative;
+  bottom: -60px;
+  text-align: center;
+}
+
+.profile-header img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-box {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-box #userEmail {
+  padding: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-actions {
+  display: flex;
+}
+
+.profile-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.6px;
+}
+
+.profile-action-circle {
+  background-color: #f0f0f0;
+  padding: 16px;
+  border-radius: 50%;
+  color: #523737;
+  margin-bottom: 8px;
+}
+
+.profile-action-title {
+  font-size: 12px;
+  font-weight: 600;
+}

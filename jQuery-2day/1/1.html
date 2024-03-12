@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,intial-scale=1,minimun-scale=1,maximum-scale=2,user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <link href="css/01.css" rel="stylesheet" type="text/css" />
+    <script>
+      $(function () {
+        //ul li a 클릭했을 때
+        //#1 div.black show()
+        //#2 div.win 배경이미지가 클릭한 a의 자식이미지로 바뀐다.
+        //a.close를 누르면 div.win이 hide() 된다 div.black hide();
+        $("ul li a").on("click", function () {
+          let changeSrc = $(this).children("img").attr("src");
+          changeSrc = `url(${changeSrc})`;
+          $("div.black").show();
+          $("div.win").show().css({ backgroundImage: changeSrc });
+        });
+        $("a.close,div.black").on("click", function () {
+          $("div.black").hide();
+          $("div.win").hide();
+        });
+      }); //jQ
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="#"><img src="modal1/images01.jpg" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="modal1/images02.jpg" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="modal1/images03.jpg" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="modal1/images04.jpg" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="modal1/images05.jpg" /></a>
+      </li>
+    </ul>
+    <div class="black"></div>
+    <div class="win">
+      <a href="#" class="close">닫기</a>
+    </div>
+  </body>
+</html>

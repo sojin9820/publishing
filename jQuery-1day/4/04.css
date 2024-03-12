@@ -1,0 +1,23 @@
+*{margin:0;padding:0}
+li{list-style:none}
+body{background:#ddd;color:#999;font-family:arial}
+.wrapper{width:980px;margin:50px auto;}
+.main{position:relative}
+.main li{float:left;width:25%;background:rgb(255,255,255)}
+.main li h2{height:60px;line-height:60px;padding:0 20px;
+font-size:24px;color:#666;border-top:1px solid #ddd;
+background:#f0f0f0 url('img/sprite.png') no-repeat right top;
+cursor:pointer;}
+
+/*제이쿼리에서 addClass적용할 클래스 openTab*/
+.main li h2.openTab{background-position:right bottom;color:#048ffb;
+background-color:#fff}
+
+.main li p{position:absolute;left:0;top:60px;background:#fff;
+padding:20px;display:none;/*제이쿼리에서 클릭하는 탭만 열리게 한다.*/}
+
+/*첫번째 탭 또는 페이지가 열렸을때 보이게 하고 싶은 
+탭을 미리 열어 놓는다.*/
+.main li:nth-child(1) p{display:block}
+
+

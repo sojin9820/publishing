@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>jquery</title>
+
+    <style>
+      body,
+      ul,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      #elementId {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background: #f00;
+        color: #fff;
+      }
+
+      .elementClass {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        background: #f0f;
+        text-align: center;
+        margin: 20px;
+      }
+
+      #gnb li {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background: #dadada;
+        margin: 10px;
+        float: left;
+      }
+
+      .button {
+        display: block;
+        width: 300px;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        background: #000;
+        color: #fff;
+      }
+
+      .clearFix:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("li").css({ border: "3px solid blue" });
+        $("#elementId").css({ border: "10px dotted green" });
+        $("li:eq(1)").css({ backgroundColor: "#ffc" });
+        $("li:even").css({ "font-size": "30px", "font-weight": "bold" });
+        $('div:has("span")').css({ backgroundColor: "#000" });
+        $('div:not(".elementId")').css({ textDecoration: "underline" });
+      }); //jQ
+    </script>
+  </head>
+  <body>
+    <a class="button">a.button</a>
+    <ul id="gnb" class="clearFix">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+    <div id="elementId">ID<span>span</span></div>
+    <div class="elementClass">div Class</div>
+    <p class="elementClass">p Class</p>
+  </body>
+</html>
+<!-- 
+$('대상선택자').메서드();
+$('태그명')
+$('.클래스명')
+$('#아이디명')
+
+필터선택자 
+:eq(n) 인덱스 번호 
+:has() 요소를 가지고 있는 대상  
+:odd 인덱스 번호중 홀수만 
+:even 인덱스 번호중 짝수만 
+:not() 요소가 아닌 대상 
+
+css();기존 대상의 css 값을 추출 해 온다 
+css('속성','값') 대상의 속성을 새값적용 
+css('속성','값').css('속성','값').css('속성','값')
+css({'속성':'값','속성':'값','속성':'값'})
+css({'font-size':'20px'}
+css({fontSize:'20px'}
+
+
+
+-->

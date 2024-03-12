@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!--제이쿼리 라이브러리-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- bxSlider 플러그인 연결 -->
+    <script src="libs/bxslider/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="libs/bxslider/jquery.bxslider.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        vertical-align: center;
+      }
+      .center {
+        width: 960px;
+        margin: 0 auto;
+      }
+      #pager {
+        text-align: center;
+      }
+      #pager a {
+        display: inline-block;
+        border: 3px double #333;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .slider li {
+        position: relative;
+      }
+      .slider li .sub {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 30px 30px 30px 70px;
+      }
+      .slider li .sub p {
+        color: #999;
+        line-height: 1.5;
+        font-size: 14px;
+        font-family: "arial";
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header" class="center">
+      <img src="img1/logo.png" class="logo" />
+    </h1>
+    <div id="contents" class="center">
+      <ul class="slider">
+        <li>
+          <img src="img1/slide01.png" />
+          <div class="sub">
+            <img class="title" src="img1/title01.png" />
+            <p>
+              Lorem Ipsum is simply industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="img1/slide02.png" />
+          <div class="sub">
+            <img class="title" src="img1/title01.png" />
+            <p>
+              Lorem Ipsum is simply industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="img1/slide03.png" />
+          <div class="sub">
+            <img class="title" src="img1/title01.png" />
+            <p>
+              Lorem Ipsum is simply industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="img1/slide04.png" />
+          <div class="sub">
+            <img class="title" src="img1/title01.png" />
+            <p>
+              Lorem Ipsum is simply industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="pager">
+      <a data-slide-index="0" href=""><img src="img1/thumb01.png" /></a>
+      <a data-slide-index="1" href=""><img src="img1/thumb02.png" /></a>
+      <a data-slide-index="2" href=""><img src="img1/thumb03.png" /></a>
+      <a data-slide-index="3" href=""><img src="img1/thumb04.png" /></a>
+    </div>
+    <script>
+      $(".slider").bxSlider({
+        pagerCustom: "#pager",
+        onSlideBefore: function ($slideElement, oldIndex, newIndex) {
+          $slideElement.children(".sub").css({ left: "-400px" });
+        },
+        onSlideAfter: function ($slideElement, oldIndex, newIndex) {
+          $slideElement.children(".sub").animate({ left: 0 }, 600);
+        },
+      });
+    </script>
+  </body>
+</html>

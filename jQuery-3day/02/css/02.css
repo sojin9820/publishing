@@ -1,0 +1,59 @@
+*{margin:0;padding:0}
+li{list-style:none}
+a{text-decoration:none;color:#333}
+body{background:#333}
+
+h1.scrolltop{position:fixed;right:0;top:0;
+margin:30px;padding:10px 30px;
+background:rgba(0,0,0,0.7);z-index:1000;
+border-radius:30px;font-family:arial;color:#fff}
+
+h1.scrolltop span{color:#ff0}
+
+h2.index{
+position:fixed;right:0;bottom:0;
+font-size:700px;color:rgba(255,255,255,0.6);
+z-index:400;margin:30px;
+}
+
+ul.gnb{background:rgba(0,0,0,0.8);position:fixed;top:0;left:0;
+z-index:500;margin:30px;padding:0 20px;
+width:500px;border-radius:40px;}
+
+ul.gnb li{float:left}
+
+ul.gnb a{display:block;padding:0 20px;height:50px;
+line-height:50px;color:#999;font-size:20px;}
+
+ul.gnb a:hover{color:#ddd;}
+
+/*제이쿼리에서 제어할 act클래스 만들어 놓기*/
+ul.gnb a.act{color:#fff}
+
+.section{height:500px;position:relative;overflow:hidden}
+.section.one{background-color:#764386}
+.section.two{background-color:#81af13}
+.section.three{background-color:purple}
+.section.four{background-color:#f4b200}
+.section.five{background-color:#bb2c33}
+
+.section:before{
+content:'0';margin:20px;color:#fff;font-size:50px;
+position:absolute;
+}
+
+.section:after{
+content:'500';margin:20px;color:#fff;font-size:50px;
+position:absolute;bottom:0;
+}
+
+
+.section.two:before{content:'501'}
+.section.three:before{content:'1001'}
+.section.four:before{content:'1501'}
+.section.five:before{content:'2001'}
+
+.section.two:after{content:'1000'}
+.section.three:after{content:'1500'}
+.section.four:after{content:'2000'}
+.section.five:after{content:'2500'}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/eedff310b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #searchBar {
+        width: 500px;
+        height: 50px;
+        border: none;
+        border-bottom: 1px solid #000;
+      }
+      #searchBar:focus {
+        outline: none;
+      }
+      #loginBtn,
+      #cancelBtn {
+        width: 100px;
+        height: 40px;
+        background-color: none;
+      }
+    </style>
+  </head>
+  <body>
+    <i class="fa-regular fa-user"></i>
+    <form action="ex.php">
+      <input type="text" id="searchBar" placeholder="검색어를 입력해주세요" />
+      <input type="submit" id="loginBtn" value="로그인" id="loginBtn" />
+      <input type="reset" id="cancelBtn" value="다시쓰기" id="cancelBtn" />
+    </form>
+  </body>
+</html>

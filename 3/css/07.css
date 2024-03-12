@@ -1,0 +1,91 @@
+@charset "utf-8";
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+#header {
+  height: 100px;
+  border-bottom: 1px solid #999;
+}
+#header > .inner {
+  overflow: hidden;
+}
+#header .logo {
+  float: left;
+  line-height: 100px;
+  font-size: 24px;
+}
+#header .gnb {
+  float: right;
+}
+#header .gnb > li {
+  float: left;
+  width: 100px;
+}
+#header .gnb > li > a {
+  display: block;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+#header .gnb > li > a:hover {
+  background-color: #000;
+  color: #fff;
+}
+/* 메인 */
+.main-banner {
+  height: 700px;
+  background: url(../img/husky/bg2.jpg) no-repeat fixed left top / cover;
+}
+.sub-visual {
+  height: 1000px;
+  background: url(../img/husky/1.jpg) no-repeat fixed;
+  background-size: cover;
+}
+.contents-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.contents-container .img-list {
+  width: 960px;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.contents-container .img-list > li {
+  float: left;
+}
+.contents-container .txt-list {
+  width: 960px;
+  margin: auto;
+  overflow: hidden;
+}
+.contents-container .txt-list > li {
+  float: left;
+  width: 320px;
+}
+.contents-container .txt-list > li span {
+  display: block;
+  text-align: center;
+}
+.contents-container .txt-list > li span:nth-child(1) {
+  margin-bottom: 4px;
+}
+.contents-container .txt-list > li span:nth-child(2) {
+  font-weight: bold;
+}
+.contents-container .txt-list > li span:nth-child(3) {
+  font-size: 14px;
+  color: #666;
+}
+/*푸터*/
+#footer {
+  height: 50px;
+  background-color: #000;
+}
+#footer address {
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  line-height: 50px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/simson.css" />
+    <style>
+      .gallery img {
+        pointer-events: none;
+      }
+      .type-b img,
+      .type-c .inner {
+        transition: top 0.15s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <ul class="gallery side-a">
+        <!--왼쪽-->
+        <li class="type-b"><img src="img/simson/tb-01.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-01.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-03.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-04.png" alt="" /></li>
+        <li class="type-c">
+          Homor
+          <div class="inner">
+            <img src="img/simson/hero-01.png" alt="호모심슨" />
+          </div>
+        </li>
+        <li class="type-b"><img src="img/simson/tb-05.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-02.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-03.png" alt="" /></li>
+        <li class="type-c">
+          Bart
+          <div class="inner">
+            <img src="img/simson/hero-02.png" alt="바트" />
+          </div>
+        </li>
+        <li class="type-b"><img src="img/simson/tb-02.png" alt="" /></li>
+      </ul>
+      <ul class="gallery side-b">
+        <!--오른쪽-->
+        <li class="type-a"><img src="img/simson/ta-04.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-06.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-07.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-05.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-06.png" alt="" /></li>
+        <li class="type-c">
+          Marge
+          <div class="inner">
+            <img src="img/simson/hero-03.png" alt="마지" />
+          </div>
+        </li>
+        <li class="type-a"><img src="img/simson/ta-07.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-08.png" alt="" /></li>
+        <li class="type-a"><img src="img/simson/ta-08.png" alt="" /></li>
+        <li class="type-b"><img src="img/simson/tb-09.png" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      const typeA = document.querySelectorAll(".type-a");
+      const typeB = document.querySelectorAll(".type-b");
+      const typeC = document.querySelectorAll(".type-c");
+
+      typeA.forEach((ele) => {
+        ele.addEventListener("mouseover", (e) => {
+          e.target.style.borderRadius = "20%";
+          e.target.style.borderWidth = "3px";
+        });
+        ele.addEventListener("mouseout", (e) => {
+          e.target.style.borderRadius = "50%";
+          e.target.style.borderWidth = "5px";
+        });
+      });
+
+      typeB.forEach((ele) => {
+        ele.addEventListener("mouseover", (e) => {
+          e.target.children[0].style.top = "0px";
+        });
+        ele.addEventListener("mouseout", (e) => {
+          e.target.children[0].style.top = "-30px";
+        });
+      });
+
+      typeC.forEach((ele) => {
+        ele.addEventListener("mouseenter", (e) => {
+          e.target.children[0].style.top = "-200px";
+        });
+        ele.addEventListener("mouseleave", (e) => {
+          e.target.children[0].style.top = "50px";
+        });
+      });
+    </script>
+  </body>
+</html>

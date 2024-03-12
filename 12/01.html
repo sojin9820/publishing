@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap > #btn {
+        color: red;
+        width: 100px;
+        height: 100px;
+        background-color: #000;
+      }
+      .titlestyle {
+        color: #fff;
+        background-color: coral;
+      }
+      .wrap > #btn.btnstyle {
+        font-size: 30px;
+        color: #fff;
+      }
+      .li-style {
+        color: #f00;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1 id="logo">타이틀</h1>
+      <ul class="listbox">
+        <li class="list">리스트1</li>
+        <li class="list">리스트2</li>
+        <li class="list">리스트3</li>
+      </ul>
+      <button id="btn">버튼</button>
+    </div>
+    <script>
+      /* document.querySelector("#logo").style.backgroundColor = "#396";
+      document.querySelector("#logo").style.color = "#fff"; */
+      const title = document.querySelector("#logo");
+      /* title.style.backgroundColor = "#396";
+      title.style.color = "#fff"; */
+      title.classList.add("titlestyle");
+      const btn = document.querySelector("#btn");
+      btn.classList.add("btnstyle");
+      const lis = document.querySelectorAll(".list");
+      console.log(lis);
+      lis.forEach((li) => {
+        li.classList.add("li-style");
+      });
+    </script>
+  </body>
+</html>

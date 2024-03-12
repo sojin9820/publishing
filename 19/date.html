@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //window 에 load 이벤트 사용시  문서의 모든 리소스가 다 로딩후
+      //document 에 DOMContentLoaded 이벤트 사용시 DOM 트리 완료 후 실행
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const updateClock = () => {
+          const now = new Date();
+          let h = now.getHours(); // 시간
+          let m = now.getMinutes(); // 분
+          let s = now.getSeconds(); // 초
+          let yearValue = now.getFullYear();
+          let monthValue = now.getMonth() + 1;
+          let dateValue = now.getDate();
+          let dayValue = now.getDay(); //0-6
+          let dayArr = ["일", "월", "화", "수", "목", "금", "토"];
+
+          const year = document.querySelector("#year");
+          const month = document.querySelector("#month");
+          const date = document.querySelector("#date");
+          const day = document.querySelector("#day");
+          const hours = document.querySelector("#hours");
+          const minutes = document.querySelector("#minutes");
+          const seconds = document.querySelector("#seconds");
+
+          if (m < 10) m = "0" + m;
+          if (s < 10) s = "0" + s;
+          hours.innerText = h;
+          minutes.innerText = m;
+          seconds.innerText = s;
+          innerText = yearValue;
+          month.innerText = monthValue;
+          date.innerText = dateValue;
+          day.innerText = dayArr[dayValue];
+        };
+        updateClock(); //초기값으로 호출
+        setInterval(updateClock, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <h1 style="font-size: 40px">
+      날짜
+      <span id="year">2024</span>
+      <span id="month">2</span>월 <span id="date">2</span>일
+      <span id="day">금요일</span>
+    </h1>
+    <h2 style="font-size: 40px">
+      시간 <span id="hours"></span>: <span id="minutes"></span>:
+      <span id="seconds"></span>
+    </h2>
+  </body>
+</html>

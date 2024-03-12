@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //변수가 선언 될때 초기화를 같이한다. undefined 상태로 초기화 한다.
+      console.log(a);
+      console.log("초기화 전" + b); //TDZ 일시적으로 죽은 사각지대로 만들어 놓는다.
+      var a;
+      let b;
+      console.log("초기화 후" + b);
+    </script>
+  </head>
+  <body></body>
+</html>

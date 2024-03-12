@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const userList = [
+        {
+          firstName: "민상",
+          lastName: "유",
+          gender: "male",
+        },
+        {
+          firstName: "나래",
+          lastName: "박",
+          gender: "female",
+        },
+        {
+          firstName: "숙",
+          lastName: "김",
+          gender: "female",
+        },
+        {
+          firstName: "석진",
+          lastName: "지",
+          gender: "male",
+        },
+      ];
+
+      const userListUpdate = userList.map((ele) => {
+        return ele.lastName + ele.firstName;
+      });
+
+      console.log(userListUpdate);
+    </script>
+  </head>
+  <body></body>
+</html>

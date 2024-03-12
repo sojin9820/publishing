@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!--제이쿼리 라이브러리 연결-->
+    <script src="libs/jquery-1.12.4.min.js"></script>
+    <!--풀페이지-->
+    <script src="libs/fullpage/fullpage.min.js"></script>
+    <link href="libs/fullpage/fullpage.min.css" rel="stylesheet" />
+    <!--bxSlider-->
+    <script src="libs/bxslider/jquery.bxslider.min.js"></script>
+    <link href="libs/bxslider/jquery.bxslider.min.css" rel="stylesheet" />
+    <!--slick slider-->
+    <script src="libs/slick/slick.min.js"></script>
+    <link href="libs/slick/slick.css" rel="stylesheet" />
+    <link href="libs/slick/slick-theme.css" rel="stylesheet" />
+    <!--custom-->
+    <link href="css/museum.css" rel="stylesheet" />
+
+    <style>
+      #right_nav {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10000;
+      }
+      #right_nav ul li {
+        width: 9px;
+        height: 9px;
+        margin-top: 40px;
+      }
+      #right_nav ul li:nth-child(1) {
+        margin-top: 0;
+      }
+      #right_nav ul li * {
+        transition: all 0.25s;
+      }
+      #right_nav ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #afafaf;
+        background: #afafaf;
+        border-radius: 50%;
+        position: relative;
+      }
+      #right_nav ul li a span {
+        position: absolute;
+        width: 2px;
+        height: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 9px;
+        display: block;
+        background: #afafaf;
+      }
+      #right_nav ul li:last-child a span {
+        display: none;
+      }
+      #right_nav ul li a::after {
+        display: block;
+        width: 100px;
+        font-size: 13px;
+        line-height: 13px;
+        position: absolute;
+        left: -110px;
+        top: -2px;
+        color: #afafaf;
+        text-align: right;
+        font-weight: bold;
+      }
+      #right_nav ul li:nth-child(1) a::after {
+        content: "HOME";
+      }
+      #right_nav ul li:nth-child(2) a::after {
+        content: "전시 및 교육";
+      }
+      #right_nav ul li:nth-child(3) a::after {
+        content: "상설전시";
+      }
+      #right_nav ul li:nth-child(4) a::after {
+        content: "관람안내및 소식";
+      }
+      #right_nav ul li.active a {
+        color: #fff;
+        background: #f0f0f0;
+      }
+      #right_nav ul li.active a span {
+        background: #f0f0f0;
+      }
+      #right_nav ul li.active a::after {
+        color: #f0f0f0;
+      }
+
+      #right_nav.up ul li a {
+        color: #690909;
+        background: #666;
+      }
+      #right_nav.up ul li a span {
+        background: #666;
+      }
+      #right_nav.up ul li a::after {
+        color: #666;
+      }
+      #right_nav.up ul li.active a {
+        color: #690909;
+        background: #690909;
+      }
+      #right_nav.up ul li.active a span {
+        background: #690909;
+      }
+      #right_nav.up ul li.active a::after {
+        color: #690909;
+      }
+    </style>
+  </head>
+  <body>
+    <!--top박스 시작-->
+    <div id="topBox">
+      <div id="pop_notice">
+        <div class="inner">
+          <p class="title">화폐박물관 임시휴관</p>
+          <p>휴관기간:2021.6.20(토) - 7.6.(월)</p>
+          <div class="today_check">
+            <input type="checkbox" id="check_cookie" />
+            <label for="check_cookie">오늘하루열지않기</label>
+            <a href="#" id="today_close">닫기</a>
+          </div>
+        </div>
+      </div>
+      <!--//상단공지-->
+      <div class="header">
+        <div class="inner clearfix">
+          <h1 id="logo"><a href="#">화폐박물관</a></h1>
+          <ul class="gnb">
+            <li class="dep1">
+              <a href="#">이용안내</a>
+              <ul class="dep2">
+                <li><a href="#">관람안내</a></li>
+                <li><a href="#">관람예약</a></li>
+                <li><a href="#">시설안내</a></li>
+                <li><a href="#">시설대관</a></li>
+                <li><a href="#">지원봉사신청</a></li>
+                <li>
+                  <a href="#">질문답변</a>
+                  <ul class="dep3">
+                    <li><a href="#">자주하는 질문</a></li>
+                    <li><a href="#">질문하기</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">찾아오시는길</a></li>
+              </ul>
+            </li>
+            <!--//이용안내-->
+            <li class="dep1">
+              <a href="#">전시안내</a>
+              <ul class="dep2">
+                <li>
+                  <a href="#">상설전시관</a>
+                  <ul class="dep3">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">제1전시실</a></li>
+                    <li><a href="#">제2전시실</a></li>
+                    <li><a href="#">제3전시실</a></li>
+                    <li><a href="#">제4전시실</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">특별전시관</a></li>
+                <li><a href="#">VR전시관</a></li>
+              </ul>
+            </li>
+            <!--//전시안내-->
+            <li class="dep1">
+              <a href="#">교육/행사</a>
+              <ul class="dep2">
+                <li><a href="#">프로그램 안내</a></li>
+                <li><a href="#">신청 확인/취소</a></li>
+                <li><a href="#">교육자료</a></li>
+                <li><a href="#">포토갤러리</a></li>
+              </ul>
+            </li>
+            <!--//교육/행사-->
+            <li class="dep1">
+              <a href="#">소장품</a>
+              <ul class="dep2">
+                <li><a href="#">유물검색</a></li>
+                <li><a href="#">기증 기탁안내</a></li>
+                <li><a href="#">열람 복제안내</a></li>
+                <li><a href="#">화폐소식</a></li>
+              </ul>
+            </li>
+            <!--//소장품-->
+            <li class="dep1">
+              <a href="#">박물관 소개</a>
+              <ul class="dep2">
+                <li><a href="#">인사말</a></li>
+                <li><a href="#">설립목적</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+            <!--//박물관 소개-->
+          </ul>
+          <!--//(e)gnb-->
+          <div class="util">
+            <a href="#" class="btn_login">LOGIN</a>
+            <a href="#" class="btn_popup">POPUP</a>
+            <a href="#" class="btn_search">검색</a>
+            <a href="#" class="btn_allmenu">전체메뉴</a>
+          </div>
+        </div>
+        <!--//header-inner-->
+        <div class="gnb_bg"></div>
+        <div class="allmenu_box">
+          <div class="inner">
+            <div><a href="#" class="btn_allmenu_close">닫기</a></div>
+            <div class="nav">
+              <ul class="gnb_all">
+                <li class="dep1_all">
+                  <a href="#">이용안내</a>
+                  <ul class="dep2_all">
+                    <li><a href="#">관람안내</a></li>
+                    <li><a href="#">관람예약</a></li>
+                    <li><a href="#">시설안내</a></li>
+                    <li><a href="#">시설대관</a></li>
+                    <li><a href="#">지원봉사신청</a></li>
+                    <li>
+                      <a href="#">질문답변</a>
+                      <ul class="dep3_all">
+                        <li><a href="#">자주하는 질문</a></li>
+                        <li><a href="#">질문하기</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">찾아오시는길</a></li>
+                  </ul>
+                </li>
+                <!--//이용안내-->
+                <li class="dep1_all">
+                  <a href="#">전시안내</a>
+                  <ul class="dep2_all">
+                    <li>
+                      <a href="#">상설전시관</a>
+                      <ul class="dep3_all">
+                        <li><a href="#">소개</a></li>
+                        <li><a href="#">제1전시실</a></li>
+                        <li><a href="#">제2전시실</a></li>
+                        <li><a href="#">제3전시실</a></li>
+                        <li><a href="#">제4전시실</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">특별전시관</a></li>
+                    <li><a href="#">VR전시관</a></li>
+                  </ul>
+                </li>
+                <!--//전시안내-->
+                <li class="dep1_all">
+                  <a href="#">교육/행사</a>
+                  <ul class="dep2_all">
+                    <li><a href="#">프로그램 안내</a></li>
+                    <li><a href="#">신청 확인/취소</a></li>
+                    <li><a href="#">교육자료</a></li>
+                    <li><a href="#">포토갤러리</a></li>
+                  </ul>
+                </li>
+                <!--//교육/행사-->
+                <li class="dep1_all">
+                  <a href="#">소장품</a>
+                  <ul class="dep2_all">
+                    <li><a href="#">유물검색</a></li>
+                    <li><a href="#">기증 기탁안내</a></li>
+                    <li><a href="#">열람 복제안내</a></li>
+                    <li><a href="#">화폐소식</a></li>
+                  </ul>
+                </li>
+                <!--//소장품-->
+                <li class="dep1_all">
+                  <a href="#">박물관 소개</a>
+                  <ul class="dep2_all">
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">설립목적</a></li>
+                    <li><a href="#">연혁</a></li>
+                    <li><a href="#">공지사항</a></li>
+                  </ul>
+                </li>
+                <!--//박물관 소개-->
+              </ul>
+            </div>
+            <div class="rel_link">
+              <p class="callcenter">
+                관람문의<a href="tel:042-872-1200">042.870.1200</a>
+              </p>
+              <ul class="famsite">
+                <li><a href="#">한국조폐공사</a></li>
+                <li><a href="#">한국조폐공사쇼핑몰</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--//전체메뉴박스-->
+      </div>
+    </div>
+    <!--top박스 종료-->
+    <!--fullpage 섹션시작-->
+    <div id="fullpage">
+      <!--//섹션1시작-->
+      <div class="section section1">
+        <div class="section1_slider">
+          <ul class="slider1">
+            <li><img src="images/main/visual1.jpg" alt="" /></li>
+            <li><img src="images/main/visual2.jpg" alt="" /></li>
+            <li><img src="images/main/visual3.jpg" alt="" /></li>
+            <li><img src="images/main/visual4.jpg" alt="" /></li>
+          </ul>
+        </div>
+        <!--//이미지슬라이더-->
+        <div class="inner">
+          <div class="slider1_num">
+            <p>
+              <span class="count">1</span>
+              <span>4</span>
+            </p>
+          </div>
+        </div>
+        <div class="slogon">
+          <p class="slogon_title">
+            <span>한국조폐공사 화폐박물관</span>
+            <span>우리나라 최초의 화폐전문박물관</span>
+          </p>
+          <p class="slogon_txt">
+            우리나라 화폐 천년의 역사를 한눈에 경험해본세요
+          </p>
+        </div>
+      </div>
+      <!--//섹션1끝-->
+      <div class="section section2">
+        <div class="inner">
+          <h2>전시 및 교육</h2>
+          <div class="section2_slider">
+            <div class="slider2">
+              <div>
+                <div class="summery">
+                  <h3>특별전시</h3>
+                  <h4>[협업전] '어린이와 함께 떠나는 화폐여행'</h4>
+                  <p class="summery_day">
+                    <span>일시 :</span> 2020.06.02 - 2020.08.30
+                  </p>
+                  <p class="summery_area"><span>장소 :</span> 1층 특별전시실</p>
+                  <p class="summery_txt">
+                    이번 전시회에서는 화폐박물관과 우리나라 최대 화폐유통업체인
+                    풍산화동양행이 소장하고 있는 세계의 희귀 기념주화 170여점이
+                    공개된다.<br /><br />어린이들이 흥미를 가질 수 있도록 '내가
+                    꿈꾸는 위인은?', '디즈니 친구들과 놀자!', <br />'시간탐험대,
+                    쥬라기 시대로 출발~', ...
+                  </p>
+                </div>
+                <div class="poster">
+                  <img src="images/main/section2-1.jpg" alt="" />
+                </div>
+              </div>
+              <!--//1-->
+              <div>
+                <div class="summery">
+                  <h3>특별전시</h3>
+                  <h4>[협업전] '어린이와 함께 떠나는 화폐여행'</h4>
+                  <p class="summery_day">
+                    <span>일시 :</span>2020.06.02 - 2020.08.30
+                  </p>
+                  <p class="summery_area"><span>장소 :</span> 1층 특별전시실</p>
+                  <p class="summery_txt">
+                    이번 전시회에서는 화폐박물관과 우리나라 최대 화폐유통업체인
+                    풍산화동양행이 소장하고 있는 세계의 희귀 기념주화 170여점이
+                    공개된다.<br /><br />어린이들이 흥미를 가질 수 있도록 '내가
+                    꿈꾸는 위인은?', '디즈니 친구들과 놀자!', <br />'시간탐험대,
+                    쥬라기 시대로 출발~', ...
+                  </p>
+                </div>
+                <div class="poster">
+                  <img src="images/main/secion2-2.jpg" alt="" />
+                </div>
+              </div>
+              <!--//2-->
+              <div>
+                <div class="summery">
+                  <h3>특별전시</h3>
+                  <h4>[협업전] '어린이와 함께 떠나는 화폐여행'</h4>
+                  <p class="summery_day">
+                    <span>일시 :</span>2020.06.02 - 2020.08.30
+                  </p>
+                  <p class="summery_area"><span>장소 :</span> 1층 특별전시실</p>
+                  <p class="summery_txt">
+                    이번 전시회에서는 화폐박물관과 우리나라 최대 화폐유통업체인
+                    풍산화동양행이 소장하고 있는 세계의 희귀 기념주화 170여점이
+                    공개된다.<br /><br />어린이들이 흥미를 가질 수 있도록 '내가
+                    꿈꾸는 위인은?', '디즈니 친구들과 놀자!', <br />'시간탐험대,
+                    쥬라기 시대로 출발~', ...
+                  </p>
+                </div>
+                <div class="poster">
+                  <img src="images/main/section2-3.png" alt="" />
+                </div>
+              </div>
+              <!--//3-->
+              <div>
+                <div class="summery">
+                  <h3>특별전시</h3>
+                  <h4>[협업전] '어린이와 함께 떠나는 화폐여행'</h4>
+                  <p class="summery_day">
+                    <span>일시 :</span>2020.06.02 - 2020.08.30
+                  </p>
+                  <p class="summery_area"><span>장소 :</span> 1층 특별전시실</p>
+                  <p class="summery_txt">
+                    이번 전시회에서는 화폐박물관과 우리나라 최대 화폐유통업체인
+                    풍산화동양행이 소장하고 있는 세계의 희귀 기념주화 170여점이
+                    공개된다.<br /><br />어린이들이 흥미를 가질 수 있도록 '내가
+                    꿈꾸는 위인은?', '디즈니 친구들과 놀자!', <br />'시간탐험대,
+                    쥬라기 시대로 출발~', ...
+                  </p>
+                </div>
+                <div class="poster">
+                  <img src="images/main/section2-4.jpg" alt="" />
+                </div>
+              </div>
+              <!--//4-->
+            </div>
+            <!--//slider2-->
+            <ul class="control_play">
+              <li class="play"><a href="#">PLAY</a></li>
+              <li class="pause"><a href="#">STOP</a></li>
+            </ul>
+            <!--//control-->
+          </div>
+          <!--//section2_slider-->
+        </div>
+        <!--//inner-->
+      </div>
+      <!--//섹션2끝-->
+      <div class="section section3"><h1 style="color: #fff">3</h1></div>
+      <div class="section section4">
+        <div class="inner">
+          <div class="section4-top">
+            <div class="question">
+              <h4>관람문의</h4>
+              <a href="#" class="more">더보기</a>
+              <dl>
+                <dt>문의</dt>
+                <dd><a href="tel:042-870-1200">042.870.1200</a></dd>
+              </dl>
+              <p>
+                관람료 및 주차료 무료입니다.<br />
+                개인 및 가족은 예약없이 자유관람이 가능 합니다.<br />
+                단체(20인이상)는 관람예약이 필요합니다.
+              </p>
+              <ul class="q_btn_set">
+                <li><a href="#">단체관람 예약</a></li>
+                <li><a href="#">시설대관 예약</a></li>
+                <li><a href="#">오시는길</a></li>
+              </ul>
+            </div>
+            <!--//관람문의-->
+            <div class="time">
+              <h4>개관시간</h4>
+              <a href="#" class="more">더보기</a>
+              <dl>
+                <dt>이용시간</dt>
+                <dd>10:00- 17:00</dd>
+              </dl>
+              <dl>
+                <dt>휴관일</dt>
+                <dd>매주 월요일</dd>
+              </dl>
+              <p>
+                1월1일 , 설날 연휴 , 추석 연휴 정부지정 임시 공휴일 휴관 합니다.
+              </p>
+            </div>
+            <!--//관람시간-->
+            <div class="news">
+              <h4>새소식</h4>
+              <a href="#" class="more">더보기</a>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><strong>[공지]</strong>화폐박물관 벼룩 시작 행사 취소 안내
+                    <span>2020-03-20</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><strong>[공지]</strong>화폐박물관 벼룩 시작 행사 취소 안내
+                    <span>2020-03-20</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><strong>[공지]</strong>화폐박물관 벼룩 시작 행사 취소 안내
+                    <span>2020-03-20</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><strong>[공지]</strong>화폐박물관 벼룩 시작 행사 취소 안내
+                    <span>2020-03-20</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--//공지사항-->
+          </div>
+          <!--//상단-->
+          <div class="section4-bottom">
+            <div>
+              <h4>휴관안내</h4>
+              <p>
+                화폐박물관 소장유물을 <br />
+                검색하실 수 있습니다.
+              </p>
+              <a href="#">유물검색 바로가기</a>
+            </div>
+            <!--//1-->
+            <div>
+              <h4>유물검색</h4>
+              <p>
+                화폐박물관 소장유물을 <br />
+                검색하실 수 있습니다.
+              </p>
+              <a href="#">유물검색 바로가기</a>
+            </div>
+            <!--//2-->
+            <div class="type-w">
+              <h4>VR보기</h4>
+              <p>
+                화폐박물관 소장유물을 <br />
+                검색하실 수 있습니다.
+              </p>
+              <a href="#">유물검색 바로가기</a>
+            </div>
+            <!--//3-->
+          </div>
+          <!--//하단-->
+        </div>
+        <!--//inner-->
+      </div>
+      <!--//섹션4끝-->
+    </div>
+    <!--fullpage 섹션종료-->
+    <div id="right_nav">
+      <ul class="right_menu">
+        <li data-menuanchor="firstPage" class="active">
+          <a href="#firstPage"><span></span></a>
+        </li>
+        <li data-menuanchor="secondPage">
+          <a href="#secondPage"><span></span></a>
+        </li>
+        <li data-menuanchor="thirdPage">
+          <a href="#thirdPage"><span></span></a>
+        </li>
+        <li data-menuanchor="fourthPage">
+          <a href="#fourthPage"><span></span></a>
+        </li>
+      </ul>
+    </div>
+    <script src="js/museum.js"></script>
+  </body>
+</html>

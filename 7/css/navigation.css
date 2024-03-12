@@ -1,0 +1,22 @@
+.tab-bar{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #f7f7f7;
+  border-top: 1px solid #c0c0c0;
+  padding: 10px 30px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.tab-bar-tab{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#c0c0c0;
+}
+.tab-bar-tab i{margin-bottom: 4px;font-size: 24px;}
+.tab-bar-tab .tab-bar-title{font-size: 14px;}
+.tab-bar-tab.tab-bar-selected{
+  color:#523737;
+}

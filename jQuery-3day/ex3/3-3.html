@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!--제이쿼리 라이브러리-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- bxSlider 플러그인 연결 -->
+    <script src="libs/bxslider/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="libs/bxslider/jquery.bxslider.css" />
+    <!-- fancybox 플러그인 연결-->
+    <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+
+    <!--현재페이지 CSS-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .center {
+        width: 960px;
+        margin: auto;
+      }
+      h1 {
+        padding: 30px 0;
+      }
+      #canSlider {
+        border-top: 2px solid green;
+        padding: 30px 0 80px 0;
+        background: url("img2/slider-c-bg.png") no-repeat;
+      }
+      #canSlider h2 {
+        font-size: 24px;
+        text-align: center;
+        margin: 20px 0;
+        font-family: "arial";
+      }
+      .bx-wrapper .bx-viewport {
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center"><img src="img2/logo.png" /></h1>
+    <div id="canSlider" class="center">
+      <h2>Bottle Beverages</h2>
+      <ul class="sliderC">
+        <li>
+          <a href="img2/can1.jpg"><img src="img2/can1.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can2.jpg"><img src="img2/can2.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can3.jpg"><img src="img2/can3.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can4.jpg"><img src="img2/can4.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can5.jpg"><img src="img2/can5.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can6.jpg"><img src="img2/can6.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can7.jpg"><img src="img2/can7.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can8.jpg"><img src="img2/can8.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can9.jpg"><img src="img2/can9.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can10.jpg"><img src="img2/can10.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can11.jpg"><img src="img2/can11.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can12.jpg"><img src="img2/can12.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can13.jpg"><img src="img2/can13.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can14.jpg"><img src="img2/can14.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can15.jpg"><img src="img2/can15.jpg" /></a>
+        </li>
+        <li>
+          <a href="img2/can16.jpg"><img src="img2/can16.jpg" /></a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(".sliderC").bxSlider({
+        maxSlides: 6, //최대 6개 까지
+        slideWidth: 160, //슬라이드 하나의 넓이
+        moveSlides: 1, //하나씩 넘기기
+        auto: true, //자동으로 넘기기
+        pager: false, //표시 동그라미 지우기
+        puase: 1500, //1.5초씩 쉬어가기
+        autoHover: true,
+      });
+
+      $(".sliderC li a").fancybox();
+      $(".sliderC li a").css({ opacity: 0.5 }); //초기값 설정
+      $(".sliderC li a").on({
+        mouseenter: function () {
+          $(this).animate({ opacity: 1 });
+        },
+        mouseleave: function () {
+          $(this).animate({ opacity: 0.5 });
+        },
+      });
+    </script>
+  </body>
+</html>

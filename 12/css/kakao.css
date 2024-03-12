@@ -1,0 +1,83 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.tab {
+  width: 655px;
+  border-top: 1px solid #888;
+  margin: 100px auto;
+  padding-top: 15px;
+}
+.tab_title {
+  display: flex;
+}
+.tab_title h3 a {
+  display: block;
+  background: url("../img/kakaotv/titlebg.png") no-repeat -380px -80px;
+  width: 90px;
+  height: 36px;
+  text-indent: -9999px;
+}
+.tab_title ul {
+  display: flex;
+}
+.tab_title ul li {
+  margin-left: 13px;
+}
+.tab_title ul li a {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  color: #888;
+  font-weight: 700;
+  font-size: 13px;
+}
+/*스크립트 사용시 불러서사용할 add클래스 ul li.on */
+.tab_title ul li.on a {
+  text-decoration: underline;
+  color: #118eff;
+  font-weight: bold;
+}
+.tab_contents {
+  position: relative;
+}
+.tab_contents ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.tab_contents ul.on {
+  display: flex;
+}
+.tab_contents li {
+  width: 154px;
+  height: 146px;
+  margin-left: 13px;
+}
+.tab_contents li:first-child {
+  margin-left: 0;
+}
+.tab_contents li a {
+  color: #222;
+  font-size: 12px;
+  letter-spacing: -1px;
+}
+.tab_contents li a:hover {
+  color: #118eff;
+  text-decoration: underline;
+}
+
+.tab_contents li span img {
+  width: 154px;
+  height: 94px;
+}
+.tab_contents li div {
+  box-sizing: border-box;
+  padding-right: 12px;
+  word-break: keep-all;
+  padding-top: 6px;
+}

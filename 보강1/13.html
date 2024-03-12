@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1.
+      /*  const obj = {
+        name: ["순희", "정수", "민희"],
+        print: function () {
+          console.log("1:" + this);
+          obj.name.forEach(function () {
+            console.log("2:" + this);
+          });
+        },
+      };*/
+
+      //2.
+      /* 
+      const obj = {
+        name: ["순희", "정수", "민희"],
+        print: function() {
+          console.log("1:" + this);
+          obj.name.forEach(() => {
+            console.log("2:" + this);
+          });
+        },
+      };
+       */
+      const obj = {
+        name: ["순희", "정수", "민희"],
+        print: () => {
+          console.log("1:" + this);
+          obj.name.forEach(() => {
+            console.log("2:" + this);
+          });
+        },
+      };
+
+      obj.print();
+
+      const product = {
+        title: "item",
+        print: () => {
+          console.log(this.title + "new"); //화살표 함수는 이 상황에서 this는 윈도우를 가리킴으로 안됨 function(){} 으로 만들기
+        },
+      };
+
+      //화살표 함수는 화살표 함수 밖에서 제일 가까운 범위의 this를 가리킨다.
+    </script>
+  </head>
+  <body></body>
+</html>

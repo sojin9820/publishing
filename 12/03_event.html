@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 150vh;
+        background-color: red;
+      }
+      body {
+        padding-bottom: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>탑</h1>
+    <div></div>
+    <a href="#" id="link"> 클릭 </a>
+
+    <input type="checkbox" id="apple" /><label for="apple">사과</label>
+    <script>
+      const link = document.querySelector("#link");
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
